@@ -1,0 +1,42 @@
+package com.chat.graduated
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
+import com.chat.graduated.vo.uservo;
+
+@Controller
+public class HelloController {
+	int a;
+	String res;
+    @RequestMapping(value = "/hello",method=RequestMethod.POST)
+    public String hello(@ModelAttribute uservo vo,Model model) {
+    	System.out.println(vo.getId());
+    	System.out.println(vo.getPw());
+ 
+    	a=user.check(vo.getId());
+    	if(a==1) {
+    		res="hello";
+    	}
+    	else {
+    		res="index";
+    	}
+    	model.addAttribute("user", vo);
+    	
+        return res;
+    }
+    
+    @RequestMapping(value="/fin",method=RequestMethod.POST)
+    public String finish(@ModelAttribute uservo vo) {
+
+    	return "finish";
+    }
+    
+    
+}
+
+
