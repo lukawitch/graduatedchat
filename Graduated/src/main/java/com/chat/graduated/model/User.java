@@ -6,18 +6,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.springframework.ui.Model;
+
 import com.chat.graduated.dao.JDBCUtil;
 
 public class User {
 	String id="admin";
-	int t;
+	String t;
 	PreparedStatement ps =null;
 	Statement sta =null;
 	ResultSet rs =null;
 	String sql=null;
 	Connection con=null;
-	public int check(String a) {
-		sql="select id from user";
+	public String check(String a,String b) {
+		sql="select id,pw,name from user";
 		JDBCUtil aa= new JDBCUtil();
 		try {
 			con=aa.testConnection();
@@ -30,11 +32,13 @@ public class User {
 			ps=con.prepareStatement(sql);
 			rs=ps.executeQuery();
 			while(rs.next()){
-			if(a.equals(rs.getString(1))) {
-				t=1;
+			if(a.equals(rs.getString(1))&&b.equals(rs.getString(2))) {
+	
+				t=rs.getString(3);
+				break;
 			}
 			else {
-				t=0;
+				t="admin_NO";
 			}
 			}
 		} catch (SQLException e) {

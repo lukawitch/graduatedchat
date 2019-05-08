@@ -19,7 +19,7 @@ public class Join {
 	Connection con=null;
 	public int insert(String id,String password,String email) {
 	JDBCUtil aa= new JDBCUtil();
-	sql="insert into user values(?,?,?)";
+	sql="insert into user(id,pw,email) values(?,?,?)";
 
 	try {
 	

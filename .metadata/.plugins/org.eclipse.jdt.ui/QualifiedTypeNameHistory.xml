@@ -9,4 +9,5 @@
 <fullyQualifiedTypeName name="javax.inject.Inject"/>
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
 </qualifiedTypeNameHistroy>
