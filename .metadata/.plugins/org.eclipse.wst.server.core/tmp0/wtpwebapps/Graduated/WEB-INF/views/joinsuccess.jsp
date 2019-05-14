@@ -42,7 +42,8 @@
            <div class="table">
                <div class="table_cell"> 
                   <img src="/resources/finish.png" class="rounded mx-auto d-block" alt="..."  >
-				  <button type="button" class="btn btn-outline-success" onclick="location.href='' ">돌아가기</button>
+                  <a class="btn btn-outline-success" rel="publisher" href="/">돌아가기</a>
+				<!-- <button type="button" class="btn btn-outline-success" onclick="location.href='' "></button> --> 
                </div>
             </div>
       

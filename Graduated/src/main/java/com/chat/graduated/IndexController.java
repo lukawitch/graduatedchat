@@ -43,16 +43,19 @@ public class IndexController {
     public String join( @RequestParam(value="id", required=true) String userId
             , @RequestParam(value="pw",required=true) String password
             , @RequestParam(value="email",required=true) String email
+            , @RequestParam(value="name",required=true) String name
+            , @RequestParam(value="birth",required=true) int birth
             , @RequestParam(value="password_check",required=true) String password_check
             , HttpServletRequest request
             , HttpServletResponse response
              ) throws Exception{
          System.out.println(userId);
          System.out.println(password);
+         System.out.println(name);
          Join join = new Join();
          int a;
      	if(password.equals(password_check)) {
-     		a=join.insert(userId, password, email);
+     		a=join.insert(userId, password, email,name,birth);
      		if(a==1) {
      			 response.setContentType("text/html; charset=UTF-8");
                  PrintWriter out = response.getWriter();
@@ -71,5 +74,12 @@ public class IndexController {
         return "joinsuccess";
     }
     
-    
+    @RequestMapping(value="/profile",method= RequestMethod.GET)
+    public String profile(@ModelAttribute Uservo vo,Model model
+    		 ,HttpServletRequest request
+             , HttpServletResponse response) {
+    	 String id = request.getParameter("id");
+    	 System.out.println(id);
+    	return "profile";
+    }
 }

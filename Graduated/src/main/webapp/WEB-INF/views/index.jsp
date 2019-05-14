@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
@@ -12,6 +12,24 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <link href="/resources/logres.css" rel="stylesheet">
 <script src="/resources/logres.js"></script>
+<script>
+function onlyNumber(event){
+	event = event || window.event;
+	var keyID = (event.which) ? event.which : event.keyCode;
+	if ( (keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105) || keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 ) 
+		return;
+	else
+		return false;
+}
+function removeChar(event) {
+	event = event || window.event;
+	var keyID = (event.which) ? event.which : event.keyCode;
+	if ( keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 ) 
+		return;
+	else
+		event.target.value = event.target.value.replace(/[^0-9]/g, "");
+}
+</script>
 </head>
 <body>
 <div class="container">
@@ -35,8 +53,9 @@
 							<div class="col-lg-12">
 								<form id="login-form" action="success" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="id" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										<input type="text" name="id" id="username" tabindex="1" class="form-control" placeholder="ID" value="">
 									</div>
+									
 									<div class="form-group">
 										<input type="password" name="pw" id="password" tabindex="2" class="form-control" placeholder="Password">
 									</div>
@@ -69,6 +88,9 @@
 										<input type="text" name="id" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
 									<div class="form-group">
+										<input type="text" name="name" id="realname" tabindex="1" class="form-control" placeholder="yourname" value="">
+									</div>
+									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
 									</div>
 									<div class="form-group">
@@ -76,6 +98,9 @@
 									</div>
 									<div class="form-group">
 										<input type="password" name="password_check" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+									</div>
+									<div class="form-group">
+									 <input type="text" class="form-control" id="number" name="birth" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)'required placeholder="your birthday ex)19800101">
 									</div>
 									<div class="form-group">
 										<div class="row">

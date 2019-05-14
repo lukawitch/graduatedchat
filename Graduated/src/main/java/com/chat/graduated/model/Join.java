@@ -17,18 +17,20 @@ public class Join {
 	String sql=null;
 	int c;
 	Connection con=null;
-	public int insert(String id,String password,String email) {
+	public int insert(String id,String password,String email,String name,int birth) {
 	JDBCUtil aa= new JDBCUtil();
-	sql="insert into user(id,pw,email) values(?,?,?)";
+	sql="insert into user(id,pw,email,name,birth) values(?,?,?,?,?)";
 
 	try {
 	
 		con=aa.testConnection();
-		System.out.println(con);
+		System.out.println(name);
 		ps=con.prepareStatement(sql);
 		ps.setString(1,id);
 		ps.setString(2,password);
 		ps.setString(3,email);
+		ps.setString(4,name);
+		ps.setInt(5,birth);
 		ps.executeUpdate();
 		System.out.println("데이터입력완료");
 		c=0;
