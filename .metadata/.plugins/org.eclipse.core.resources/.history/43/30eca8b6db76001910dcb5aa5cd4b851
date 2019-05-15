@@ -62,7 +62,6 @@ public class Profile extends HttpServlet {
 			while(rs.next()){
 				user.setEmail(rs.getString(3));
 				user.setName(rs.getString(4));
-				user.setBirth(rs.getString(5));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

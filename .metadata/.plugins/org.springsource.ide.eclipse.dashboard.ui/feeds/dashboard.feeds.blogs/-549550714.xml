@@ -5,7 +5,65 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-05-14T09:42:03Z</updated>
+  <updated>2019-05-15T00:00:00Z</updated>
+  <entry>
+    <title>Spring Tips: Spring Batch and Apache Kafka</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/15/spring-tips-spring-batch-and-apache-kafka" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-05-15:3680</id>
+    <updated>2019-05-15T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;a href="http://twitter.com/SpringTipsLive"&gt;&lt;em&gt;Spring Tips&lt;/em&gt; (@SpringTipsLive)&lt;/a&gt;! In this installment we look at the &lt;em&gt;just-landed&lt;/em&gt; community contribution in Spring Batch adding support for Apache Kafka. This new support offers some tantalizing opportunities to bridge batch and streaming workloads. Stage large writes to backend warehouses with Kafka and drain the stream with Spring Batch. Load large amounts of data from existing datastores and funnel it into stream processing pipelines. And the possibilities become even more interesting when you consider &lt;a href="https://spring.io/blog/2016/10/13/spring-tips-a-gentle-introduction-to-spring-integration"&gt;Spring Integration&lt;/a&gt;, &lt;a href="https://spring.io/blog/2016/11/09/spring-tips-spring-cloud-stream"&gt;Spring Cloud Stream&lt;/a&gt;, &lt;a href="https://spring.io/blog/2018/04/04/spring-tips-spring-cloud-stream-kafka-streams"&gt;Spring Cloud Stream Kafka Streams&lt;/a&gt;, and &lt;a href="https://spring.io/blog/2016/11/16/spring-tips-spring-cloud-data-flow"&gt;Spring Cloud Data Flow&lt;/a&gt;. If you want a quick primer on Spring Batch-basics you might like this &lt;a href="https://spring.io/blog/2017/02/01/spring-tips-spring-batch"&gt;Spring Tip installment on Spring Batch&lt;/a&gt; from - &lt;em&gt;gasp&lt;/em&gt;! - two years ago!&lt;/p&gt;
+&lt;p&gt;speaker: &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman) &lt;/a&gt;&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/UJesCn731G4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - May 14th, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/14/this-week-in-spring-may-14th-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-05-14:3679</id>
+    <updated>2019-05-14T21:47:19Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! I&amp;rsquo;m in beautiful Krakow for the epic Geecon show and then I&amp;rsquo;m off to spectacular Barcelona, Spain for the Spring I/O show. I hope to see you in both locations! It&amp;rsquo;s sure to be fun. Next week it&amp;rsquo;s going to be even more crazy! Next week I&amp;rsquo;m off to Zurich, Switzerland for a visit with some customers, and then it&amp;rsquo;s off to Paris, France for the Spring One Tour event there, and then it&amp;rsquo;s off to Minsk, Belarus, for the VOXXED Days Minsk show (my first time there! I&amp;rsquo;m so excited!), and then right after that, it&amp;rsquo;s off to Barcelona, Spain for JBCN. If you&amp;rsquo;re at any of these events in the next 12 days, I&amp;rsquo;d love to chat! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/14/spring-boot-1-5-21-available-now"&gt;Spring Boot 1.5.21 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/14/spring-data-moore-m4-lovelace-sr8-and-ingalls-sr22-released"&gt;Spring Data Moore M4, Lovelace SR8 and Ingalls SR22 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/13/spring-integration-5-2-milestone-2-available"&gt;Spring Integration 5.2 Milestone 2 Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/13/spring-for-apache-kafka-2-3-milestone-2"&gt;Spring for Apache Kafka 2.3 Milestone 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/13/spring-amqp-spring-for-rabbitmq-2-2-milestone-2"&gt;Spring AMQP (Spring for RabbitMQ) 2.2 Milestone 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/13/spring-integration-aws-2-2-ga-and-spring-cloud-stream-kinesis-binder-1-2-available"&gt;Spring Integration AWS 2.2 GA and Spring Cloud Stream Kinesis Binder 1.2 Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/10/spring-framework-5-2-0-m2-5-1-7-5-0-14-and-4-3-24-available-now"&gt;Spring Framework 5.2.0.M2, 5.1.7, 5.0.14 and 4.3.24 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/09/a-bootiful-podcast-kotlin-team-engineer-roman-elisarov"&gt;A Bootiful Podcast: Kotlin team engineer Roman Elisarov&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/08/spring-tips-reactive-web-views"&gt;Spring Tips: Reactive Web Views&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/07/spring-boot-for-apache-geode-pivotal-gemfire-1-1-0-m1-released"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.0.M1 Released!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[Want to learn about Kotlin? Check out this 2-parter talk that Dr. Venkat Subramaniam and I did at Devnexus. It introduces Kotlin and demonstrates the concepts in terms of APIs in Spring. Here&amp;rsquo;s &lt;a href="https://www.recallact.com/presentation/kotlin-jumpstart-venkat-and-josh-part-1"&gt;the first part&lt;/a&gt; and here&amp;rsquo;s &lt;a href="https://www.recallact.com/presentation/kotlin-jumpstart-venkat-and-josh-part-2"&gt;the second part&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;using Spring Cloud and wanting to figure out how to integrate some of these technologies for .NET-based projects? &lt;a href="https://twitter.com/springcloud/status/1126618789272072194"&gt;Check out this talk on Steeltoe&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Spring Boot contributor &lt;a href="https://twitter.com/snicoll/status/1126151776430903298"&gt;St?phane Nicoll tweets&lt;/a&gt; that the next Spring Boot 2.2 milestone adds out-of-the-box support for JUnit 5 (whilst keeping compatibility with JUnit 4 via the vintage engine). Good stuff!&lt;/li&gt;
+  &lt;li&gt;The new &lt;em&gt;Java magazine&lt;/em&gt; is out, featuring an article about the work &lt;a href="https://twitter.com/srclbs/status/1126031390527709186?s=21"&gt;Sebastien Deleuze is doing with Spring Fu&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 1.5.21 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/14/spring-boot-1-5-21-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2019-05-14:3677</id>
+    <updated>2019-05-14T12:43:27Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Boot 1.5.21 has been released and is now available from &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
+&lt;p&gt;Spring Boot 1.5.21 is a maintenance release that includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v1.5.21.RELEASE"&gt;9 dependency updates and selected bug fixes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you haven¡¯t already upgraded to Spring Boot 2, please consider doing so as support for 1.x will &lt;a href="https://spring.io/blog/2018/07/30/spring-boot-1-x-eol-aug-1st-2019"&gt;end on August 1st 2019&lt;/a&gt;. &lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/1.5.21.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Data Moore M4, Lovelace SR8 and Ingalls SR22 released</title>
     <link rel="alternate" href="https://spring.io/blog/2019/05/14/spring-data-moore-m4-lovelace-sr8-and-ingalls-sr22-released" />
@@ -261,6 +319,26 @@ See &lt;code&gt;spring-integration-rsocket&lt;/code&gt; module and &lt;code&gt;R
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-amqp/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-amqp"&gt;GitHub&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/AMQP"&gt;JIRA&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-amqp/docs/2.2.0.M2/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-amqp"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-amqp"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Batch 4.2.0.M2 available now!</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/13/spring-batch-4-2-0-m2-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mahmoud Ben Hassine</name>
+    </author>
+    <id>tag:spring.io,2019-05-13:3673</id>
+    <updated>2019-05-13T19:02:00Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce that Spring Batch 4.2.0.M2 is available now from our &lt;a href="https://repo.spring.io/milestone/"&gt;milestone repository&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-s-new" class="anchor" name="what-s-new"&gt;&lt;/a&gt;What¡¯s new?&lt;/h2&gt;
+&lt;p&gt;This release adds a new item reader and a new item writer for &lt;a href="https://kafka.apache.org"&gt;Apache Kafka&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;KafkaItemReader&lt;/code&gt; can read messages from a single partition or multiple partitions of the same topic. This reader stores message offsets in the &lt;code&gt;ExecutionContext&lt;/code&gt; to support restart.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;KafkaItemWriter&lt;/code&gt; uses a &lt;code&gt;KafkaTemplate&lt;/code&gt; from the &lt;a href="https://spring.io/projects/spring-kafka"&gt;Spring for Apache Kafka&lt;/a&gt; project to send messages to a given topic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I would like to thank &lt;a href="https://github.com/mouellet"&gt;Mathieu Ouellet&lt;/a&gt; for his amazing contribution in adding support for Apache Kafka in Spring Batch!&lt;/p&gt;&lt;h2&gt;&lt;a href="#feedback" class="anchor" name="feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
+&lt;p&gt;Spring Batch &lt;code&gt;4.2.0.M2&lt;/code&gt; can be consumed with Spring Boot &lt;code&gt;2.2.0.M3&lt;/code&gt;. We look forward to hearing your feedback on this second milestone! Feel free to ping &lt;a href="https://www.twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt; or &lt;a href="https://www.twitter.com/_benas_"&gt;@_benas_&lt;/a&gt; on Twitter or to ask your question on &lt;a href="https://stackoverflow.com/questions/tagged/spring-batch"&gt;StackOverflow&lt;/a&gt; or &lt;a href="https://gitter.im/spring-batch/Lobby"&gt;Gitter&lt;/a&gt;. If you find any issue, please open a ticket on &lt;a href="https://jira.spring.io/projects/BATCH/"&gt;Jira&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/4.2.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>
@@ -750,117 +828,5 @@ and Spring Session 2.1.&lt;/p&gt;
 &amp;lt;/dependency&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-open-service-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/2.1.2.RELEASE/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/2.1.2.RELEASE/apidocs/"&gt;API Doc&lt;/a&gt; &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Spring Batch and Spring Cloud Task lead Michael Minella</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/26/a-bootiful-podcast-spring-batch-and-spring-cloud-task-lead-michael-minella" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-04-26:3658</id>
-    <updated>2019-04-26T01:05:00Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! In this episode we talk to fellow Apress author, Spring R&amp;amp;D manager, Spring Batch and Spring Cloud Task lead Michael Minella about all things task and batch processing with Spring, South Africa, and so much more. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://twitter.com/michaelminella"&gt;Michael Minella on Twitter (@michaelminella)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/611519967&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.0.0.RC1 Released!</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/24/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-rc1-released" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>John Blum</name>
-    </author>
-    <id>tag:spring.io,2019-04-24:3657</id>
-    <updated>2019-04-24T19:49:02Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;I am pleased to announce the release of Spring Boot for Apache Geode and Pivotal GemFire (SBDG) 1.0.0.RC1.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This is another significant milestone and SBDG 1.0 is less than a week away from final GA.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The new bits, &lt;code&gt;org.springframework.geode:spring-geode-starter:1.0.0.RC1&lt;/code&gt;, are available in the Spring &lt;code&gt;libs-milestone&lt;/code&gt; repository, &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/geode/spring-geode-starter/1.0.0.RC1/"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id="whats-new" class="sect0"&gt;&lt;a class="anchor" href="#whats-new"&gt;&lt;/a&gt;What&amp;#8217;s New&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This release adds several new features with some significant improvements and important bug fixes:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Added auto-configuration support to automatically configure a &lt;code&gt;GemfireTemplate&lt;/code&gt; for each GemFire/Geode Region defined in the GemFire/Geode cache.  &lt;a href="https://docs.spring.io/autorepo/docs/spring-boot-data-geode-build/1.0.0.BUILD-SNAPSHOT/reference/html5/#geode-data-access-region-templates"&gt;Read more&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Added chapter on "&lt;em&gt;Auto-configuration vs. Annotation-based configuration&lt;/em&gt;" to the reference guide.  &lt;a href="https://docs.spring.io/autorepo/docs/spring-boot-data-geode-build/1.0.0.BUILD-SNAPSHOT/reference/html5/#geode-autoconfiguration-annotations"&gt;Read more&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;To compliment the chapter, added a new sample to explain and show Spring Boot&amp;#8217;s auto-configuration support for GemFire/Geode in action. &lt;a href="https://docs.spring.io/autorepo/docs/spring-boot-data-geode-build/1.0.0.BUILD-SNAPSHOT/reference/html5/#geode-samples"&gt;Read more&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Fixed a bug in the HTTP client used to push cluster configuration from a client to a standalone GemFire/Geode cluster, or PCC environment, with Security (Auth) enabled.  &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues/16"&gt;Read more&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Switched Reference Docs to the HTML5 format. &lt;a href="https://docs.spring.io/autorepo/docs/spring-boot-data-geode-build/1.0.0.BUILD-SNAPSHOT/reference/html5/"&gt;See here&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This and many other improvements were made.  See the &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/blob/1.0.0.RC1/spring-geode/src/main/resources/changelog.txt#L7-L26"&gt;changelog&lt;/a&gt; for complete details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id="whats-next" class="sect0"&gt;&lt;a class="anchor" href="#whats-next"&gt;&lt;/a&gt;What&amp;#8217;s Next&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With the exception of adding 1 more sample, focused on &lt;em&gt;Spring Boot&amp;#8217;s Actuator&lt;/em&gt; support for Apache Geode and Pivotal GemFire, most of the efforts will now shift to finalizing the GA release bits.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Only additional testing and documentation edits will be performed at this stage in development.&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id="feedback" class="sect0"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The GA release for SBDG 1.0 is tentatively scheduled for next Monday, 2019-04-29.  Any feedback between now and then is always appreciated.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Batch 4.2.0.M1 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/24/spring-batch-4-2-0-m1-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mahmoud Ben Hassine</name>
-    </author>
-    <id>tag:spring.io,2019-04-17:3650</id>
-    <updated>2019-04-24T19:21:00Z</updated>
-    <content type="html">&lt;p&gt;I am pleased to announce that the first milestone of Spring Batch 4.2 has been released and is available from our &lt;a href="https://repo.spring.io/milestone/"&gt;milestone repository&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The major feature of this release is the addition of batch metrics with &lt;a href="https://micrometer.io"&gt;Micrometer&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#batch-metrics-with-micrometer" class="anchor" name="batch-metrics-with-micrometer"&gt;&lt;/a&gt;Batch Metrics with Micrometer&lt;/h2&gt;
-&lt;p&gt;This release introduces a new feature that lets you monitor your batch jobs by using Micrometer. By default, Spring Batch collects metrics (such as job duration, step duration, item read and write throughput, and others) and registers them in Micrometer&amp;rsquo;s global metrics registry under the &lt;code&gt;spring.batch&lt;/code&gt; prefix. These metrics can be sent to any &lt;a href="https://micrometer.io/docs/concepts#_supported_monitoring_systems"&gt;monitoring system&lt;/a&gt; supported by Micrometer.&lt;/p&gt;
-&lt;p&gt;For more details about this new feature, please refer to the &lt;a href="https://docs.spring.io/spring-batch/4.2.x/reference/html/monitoring-and-metrics.html"&gt;Monitoring and Metrics&lt;/a&gt; section of the reference documentation.&lt;/p&gt;&lt;h2&gt;&lt;a href="#other-updates" class="anchor" name="other-updates"&gt;&lt;/a&gt;Other updates&lt;/h2&gt;
-&lt;p&gt;In addition to Micrometer support, this milestone includes other improvements:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The reference documentation has been updated to match the same style as the other Spring projects&lt;/li&gt;
-  &lt;li&gt;Dependencies have been updated to the latest milestones of Spring projects:&lt;br/&gt;Spring Framework &lt;code&gt;5.2.0.M1&lt;/code&gt;, Spring Data &lt;code&gt;2.2.0.M3&lt;/code&gt; and Spring Integration &lt;code&gt;5.2.0.M1&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;A number of other small improvements and bug fixes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For a complete list of changes, please check the &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10090&amp;version=17267"&gt;change log&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#feedback" class="anchor" name="feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
-&lt;p&gt;Spring Batch &lt;code&gt;4.2.0.M1&lt;/code&gt; can be consumed with Spring Boot &lt;code&gt;2.2.0.M2&lt;/code&gt;. Go ahead and create your next Spring Batch app on &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt;! We have also created a &lt;a href="https://github.com/spring-projects/spring-batch/tree/master/spring-batch-samples#batch-metrics-with-micrometer"&gt;new sample&lt;/a&gt; to show how to monitor Spring Batch jobs with Micrometer, &lt;a href="https://prometheus.io"&gt;Prometheus&lt;/a&gt;, and &lt;a href="https://grafana.com"&gt;Grafana&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;We look forward to hearing your feedback on this first milestone! Feel free to ping &lt;a href="https://www.twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt; or &lt;a href="https://www.twitter.com/_benas_"&gt;@_benas_&lt;/a&gt; on Twitter or to ask your question on &lt;a href="https://stackoverflow.com/questions/tagged/spring-batch"&gt;StackOverflow&lt;/a&gt; or &lt;a href="https://gitter.im/spring-batch/Lobby"&gt;Gitter&lt;/a&gt;. If you find any issue, please open a ticket on &lt;a href="https://jira.spring.io/projects/BATCH/"&gt;Jira&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-next" class="anchor" name="what-rsquo-s-next"&gt;&lt;/a&gt;What&amp;rsquo;s next?&lt;/h2&gt;
-&lt;p&gt;The next milestone will ship support for &lt;a href="https://kafka.apache.org"&gt;Apache Kafka&lt;/a&gt;. We are planning to add a new item reader and writer to read data from and write it to Kafka topics. Stay tuned!&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/4.2.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: Spring Cloud Circuit Breaker</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/24/spring-tips-spring-cloud-circuit-breaker" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-04-24:3656</id>
-    <updated>2019-04-24T18:17:27Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! In this installment we look at the just-announced Spring Cloud Circuit Breaker project, which provides an abstraction atop Netflix&amp;rsquo; Hystrix, Resilience4J, Alibaba&amp;rsquo;s Sentinel and Spring Retry and supports reactive and non-reactive circuits.&lt;/p&gt;
-&lt;p&gt;speaker: Josh Long&lt;br/&gt;twitter: &lt;a href="http://twitter.com/Starbuxman"&gt;@starbuxman&lt;/a&gt;&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/s5-leUCti5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
 </feed>

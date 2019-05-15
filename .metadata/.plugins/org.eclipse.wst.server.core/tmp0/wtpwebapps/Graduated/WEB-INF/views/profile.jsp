@@ -349,6 +349,13 @@ text-align:left;
               Zip code required.
             </div>
           </div>
+          <div class="col-md-6 mb-3">
+            <label for="zip">생년월일</label>
+            <input type="text" class="form-control" id="zip" placeholder="#7612" value="${user.getBirth()}" readonly>
+            <div class="invalid-feedback">
+              Zip code required.
+            </div>
+          </div>
         </div>
 		<div class="row">
    
