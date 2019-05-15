@@ -10,4 +10,10 @@
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
 <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="com.chat.graduated.model.Profile"/>
+<fullyQualifiedTypeName name="com.chat.graduated.model.User"/>
+<fullyQualifiedTypeName name="com.chat.graduated.vo.Uservo"/>
 </qualifiedTypeNameHistroy>

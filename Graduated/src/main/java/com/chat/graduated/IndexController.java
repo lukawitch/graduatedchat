@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chat.graduated.model.Join;
+import com.chat.graduated.model.Profile;
 import com.chat.graduated.model.User;
 import com.chat.graduated.vo.Uservo;
 
@@ -21,7 +23,7 @@ public class IndexController {
 	String a;
 	String res;
     @RequestMapping(value = "/success",method=RequestMethod.POST)
-    public String hello(@ModelAttribute Uservo vo,Model model) {
+    public String hello(@ModelAttribute Uservo vo,Model model,HttpSession session) {
     	System.out.println(vo.getId());
     	System.out.println(vo.getPw());
     	User user=new User();
@@ -32,6 +34,7 @@ public class IndexController {
     	}
     	else {
     		model.addAttribute("name",a);
+    		session.setAttribute("id",vo.getId());
     		res="success";
     	}
     	model.addAttribute("user", vo);
@@ -59,7 +62,7 @@ public class IndexController {
      		if(a==1) {
      			 response.setContentType("text/html; charset=UTF-8");
                  PrintWriter out = response.getWriter();
-                 out.println("<script>alert('ID∞° ¡ﬂ∫π¿‘¥œ¥Ÿ'); history.go(-1);</script>");
+                 out.println("<script>alert('IDÍ∞Ä Ï§ëÎ≥µÏûÖÎã§'); history.go(-1);</script>");
                  out.flush(); 
      		}
      		
@@ -67,7 +70,7 @@ public class IndexController {
      		else {
             response.setContentType("text/html; charset=UTF-8");
             PrintWriter out = response.getWriter();
-            out.println("<script>alert('∑Œ±◊¿Œ ¡§∫∏∏¶ »Æ¿Œ«ÿ¡÷ººø‰.'); history.go(-1);</script>");
+            out.println("<script>alert('ÎπÑÎ∞ÄÎ≤àÌò∏Î•º ÌôïÏù∏Ìï¥ Ï£ºÏÑ∏Ïöî.'); history.go(-1);</script>");
             out.flush(); 
      		}
          
@@ -77,9 +80,13 @@ public class IndexController {
     @RequestMapping(value="/profile",method= RequestMethod.GET)
     public String profile(@ModelAttribute Uservo vo,Model model
     		 ,HttpServletRequest request
-             , HttpServletResponse response) {
-    	 String id = request.getParameter("id");
-    	 System.out.println(id);
+             , HttpServletResponse response
+             ,HttpSession session) {
+    	Profile profile = new Profile();
+    	String id = (String)session.getAttribute("id");
+    	vo=profile.select(id);
+    	session.setAttribute("user",vo);
+    	System.out.println(vo.getEmail());
     	return "profile";
     }
 }

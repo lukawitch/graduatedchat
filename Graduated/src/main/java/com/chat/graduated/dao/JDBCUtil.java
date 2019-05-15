@@ -14,7 +14,7 @@ public class JDBCUtil {
 	        	Class.forName("com.mysql.cj.jdbc.Driver");
 	        }
 	        catch (Exception e) {
-	        	System.out.println("¿¬°á¿¡·¯");
+	        	System.out.println("ì—°ê²°ì™„ë£Œ");
 			}
 	        Connection conn = DriverManager.getConnection(URL, USER, PW);
 	     

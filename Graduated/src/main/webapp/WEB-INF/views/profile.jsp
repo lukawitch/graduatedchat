@@ -4,9 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -326,7 +323,7 @@ text-align:left;
 
         <div class="mb-3">
           <label for="user">이름</label>
-          <input type="text" class="form-control" id="user" value="홍길동" required>
+          <input type="text" class="form-control" id="user" value="${user.getName()}" required>
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
           </div>
@@ -334,7 +331,7 @@ text-align:left;
 
         <div class="mb-3">
           <label for="emai;">이메일</label>
-          <input type="email" class="form-control" id="email" placeholder="example@naver.com" value="gildong@naver.com">
+          <input type="email" class="form-control" id="email" placeholder="example@naver.com" value="${user.getEmail()}">
 
         </div>
 
@@ -346,8 +343,8 @@ text-align:left;
         <div class="row">
    
           <div class="col-md-6 mb-3">
-            <label for="zip">${id}</label>
-            <input type="text" class="form-control" id="zip" placeholder='' readonly>
+            <label for="zip">아이디</label>
+            <input type="text" class="form-control" id="zip" placeholder="#7612" value="${id}" readonly>
             <div class="invalid-feedback">
               Zip code required.
             </div>
@@ -389,6 +386,7 @@ text-align:left;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		
-</body>
+
+<!-- ${user.getEmail()} -->
 </body>
 </html>
