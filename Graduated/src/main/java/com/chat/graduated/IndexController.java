@@ -89,4 +89,10 @@ public class IndexController {
     	System.out.println(vo.getEmail());
     	return "profile";
     }
+    
+    @RequestMapping(value="/chat",method= RequestMethod.GET)
+    public String chat() {
+    	
+    	return "chat";
+    }
 }

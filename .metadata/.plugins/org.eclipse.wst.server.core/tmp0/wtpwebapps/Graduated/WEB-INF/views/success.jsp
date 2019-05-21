@@ -61,6 +61,8 @@ function prodel(aa){
 												</a>
 										</td>
 										<td>
+										
+											<a href="chat">
 											<div class="media">
 												
 												<div class="media-body">
@@ -73,6 +75,7 @@ function prodel(aa){
 												</div>
 											</div>
 										</td>
+										</a>
 									</tr>
 									<tr data-status="pendiente">
 										<td>
