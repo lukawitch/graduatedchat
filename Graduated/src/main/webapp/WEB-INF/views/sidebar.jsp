@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <link rel="stylesheet" href="/resources/sidebar.css">
+
   <header class="header">
           <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -153,14 +155,21 @@
           <div class="sidebar left ">
             
             <ul class="list-sidebar bg-defoult">
-              <li> <a href="#" class="collapsed active" > <i class="fa fa-users fa-3x"></i> <span class="nav-label">Change</span> </a></li>
-            <li> <a href="#"><i class="fa fa-plus fa-3x"></i> <span class="nav-label">GAdd</span></a> </li>
+    
+         
+            <li> <a href="personal" class="collapsed active" > <i class="fa fa-users fa-3x"></i> <span class="nav-label">Change</span> </a></li>
+         
+              
+            <li> <a href="group"><i class="fa fa-plus fa-3x"></i> <span class="nav-label">GAdd</span></a> </li>
             <li> <a href="#" class="collapsed active" > <i class="fa fa-user-plus fa-3x"></i> <span class="nav-label">UAdd</span>  </a></li>
           <li> <a href="#"><i class="fa fa-user-times fa-3x"></i> <span class="nav-label">Delete</span></a> </li>
-          <li> <a href="#" class="collapsed active" ><i class="fa fa-sign-out fa-3x"></i> <span class="nav-label">Signout</span></a></li>
+          <li> <a href="logout" class="collapsed active" ><i class="fa fa-sign-out fa-3x"></i> <span class="nav-label">Signout</span></a></li>
+       
         
   
     </ul>
     </div>
     </aside>
     </div>
+    
+    

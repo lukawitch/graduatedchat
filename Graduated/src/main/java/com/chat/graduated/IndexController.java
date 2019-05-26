@@ -95,4 +95,19 @@ public class IndexController {
     	
     	return "chat";
     }
+    @RequestMapping(value="/personal",method= RequestMethod.GET)
+    public String personal(HttpSession session) {
+    	session.setAttribute("mode", "personal");
+    	return "personal";
+    }
+    @RequestMapping(value="/logout",method= RequestMethod.GET)
+    public String logout(HttpSession session) {
+    	session.invalidate();
+    	return "index";
+    }
+    @RequestMapping(value="/group",method= RequestMethod.GET)
+    public String group() {
+    	
+    	return "makegroup";
+    }
 }
