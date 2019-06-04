@@ -110,4 +110,14 @@ public class IndexController {
     	
     	return "makegroup";
     }
+    @RequestMapping(value="/useradd",method= RequestMethod.GET)
+    public String useradd() {
+    	
+    	return "useradd";
+    }
+    @RequestMapping(value="/calender",method= RequestMethod.GET)
+    public String calender() {
+    	
+    	return "calender";
+    }
 }

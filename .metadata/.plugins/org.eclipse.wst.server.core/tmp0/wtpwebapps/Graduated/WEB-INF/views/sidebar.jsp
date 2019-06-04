@@ -13,6 +13,14 @@
             <div class="float-left"> <a href="#" class="button-left"><span class="fa fa-fw fa-bars " style="visibility:hidden "></span></a> </div>
             <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
               <ul class="navbar-nav">
+              <li class="nav-item dropdown messages-menu">
+				
+                  <a class="nav-link dropdown-toggle" href="calender">
+                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                    <span class="label label-success bg-success">10</span>
+                  </a>
+                 
+              </li>
                 <li class="nav-item dropdown messages-menu">
                   <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-bell-o"></i>
@@ -161,7 +169,7 @@
          
               
             <li> <a href="group"><i class="fa fa-plus fa-3x"></i> <span class="nav-label">GAdd</span></a> </li>
-            <li> <a href="#" class="collapsed active" > <i class="fa fa-user-plus fa-3x"></i> <span class="nav-label">UAdd</span>  </a></li>
+            <li> <a href="useradd" class="collapsed active" > <i class="fa fa-user-plus fa-3x"></i> <span class="nav-label">UAdd</span>  </a></li>
           <li> <a href="#"><i class="fa fa-user-times fa-3x"></i> <span class="nav-label">Delete</span></a> </li>
           <li> <a href="logout" class="collapsed active" ><i class="fa fa-sign-out fa-3x"></i> <span class="nav-label">Signout</span></a></li>
        
