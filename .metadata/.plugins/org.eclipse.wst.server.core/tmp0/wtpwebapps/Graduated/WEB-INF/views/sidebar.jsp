@@ -15,6 +15,13 @@
               <ul class="navbar-nav">
               <li class="nav-item dropdown messages-menu">
 				
+                  <a class="nav-link dropdown-toggle" href="success">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                  </a>
+                 
+              </li>
+              <li class="nav-item dropdown messages-menu">
+				
                   <a class="nav-link dropdown-toggle" href="calender">
                     <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                     <span class="label label-success bg-success">10</span>
@@ -138,7 +145,7 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="footer-ul text-center"><a href="#">View all</a></li>
+                    <li class="footer-ul text-center"><a href="messageview">View all</a></li>
                   </ul>
                 </div>
               </li>

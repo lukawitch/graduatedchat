@@ -4,315 +4,215 @@
 <html>
 <head>
 <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<link rel="stylesheet" href="/resources/group.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/resources/chat.css">
 <style>
-
-.profile{
-
-
-}
-.info{
-background-color:#fff;
-}
-.button{
-background-color:#fff;
-}
-.avatar{
-
-}
-.card {
-    padding-top: 20px;
-    margin: 10px 0 20px 0;
-    background-color: rgba(214, 224, 226, 0.2);
-    border-top-width: 0;
-    border-bottom-width: 2px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+div h3 span{
+     color : #FFF;
+     font-size:14px;
 }
 
-.card .card-heading {
-    padding: 0 20px;
-    margin: 0;
+div span {
+     font-weight: 200;
 }
 
-.card .card-heading.simple {
+h1{
+     font-weight: 200;
+}
+
+.login_box{
+    background: #f32d27; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjZjMyZDI3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTklIiBzdG9wLWNvbG9yPSIjZmY2YjQ1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+    background: -moz-linear-gradient(45deg,  #f32d27 5%, #ff6b45 99%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(5%,#f32d27), color-stop(99%,#ff6b45)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  #f32d27 5%,#ff6b45 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  #f32d27 5%,#ff6b45 99%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  #f32d27 5%,#ff6b45 99%); /* IE10+ */
+    background: linear-gradient(45deg,  #f32d27 5%,#ff6b45 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f32d27', endColorstr='#ff6b45',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+    
+    width:100%;
+   /* height:70%; */
+  
+    <!--top:15%;-->
+    left:32.5%;
+    
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.54);
+-moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 0.54);
+box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.54);
+}
+
+@media (max-width: 767px) {
+    .login_box{
+        background: #f32d27; /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjZjMyZDI3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTklIiBzdG9wLWNvbG9yPSIjZmY2YjQ1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+        background: -moz-linear-gradient(45deg,  #f32d27 5%, #ff6b45 99%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left bottom, right top, color-stop(5%,#f32d27), color-stop(99%,#ff6b45)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(45deg,  #f32d27 5%,#ff6b45 99%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(45deg,  #f32d27 5%,#ff6b45 99%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(45deg,  #f32d27 5%,#ff6b45 99%); /* IE10+ */
+        background: linear-gradient(45deg,  #f32d27 5%,#ff6b45 99%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f32d27', endColorstr='#ff6b45',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+        
+        width:100%;
+        height:80%;
+  
+        <!--top:10%;-->
+        left:5%;
+        
+        -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.54);
+-moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 0.54);
+box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.54);
+    }
+}
+
+.image-circle{
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    border: 4px solid #FFF;
+    margin: 10px;
+}
+
+.follow{
+    background-color:#FC563B;
+    height: 80px;
+    cursor:pointer;
+}
+
+.follow:hover {
+    background-color:#F22F26;
+    height: 80px;
+    cursor:pointer;
+}
+
+.login_control{
+    background-color:#FFF;
+    padding:10px;
+    
+}
+
+.control {
+    color:#000;
+    margin:10px;
+}
+
+.label {
+    
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
+.form-control:focus{
+    border-radius: 0px;
+    border-bottom: 1px solid #FC563B;
+    margin-bottom: 10px;
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.btn-orange{
+    background-color: #FC563B;
+    border-radius: 0px;
+    margin: 5px;
+    padding: 5px;
+    width: 150px;
     font-size: 20px;
-    font-weight: 300;
-    color: #777;
-    border-bottom: 1px solid #e5e5e5;
+    font-weight: inherit;
 }
 
-.card .card-heading.image img {
-    display: inline-block;
-    width: 46px;
-    height: 46px;
-    margin-right: 15px;
-    vertical-align: top;
-    border: 0;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
+.btn-orange:hover {
+    background-color: #F22F26;
+    border-radius: 0px;
+    margin: 5px;
+    padding: 5px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: inherit;
+    color:#FFF !important;
+}
+
+.line{
+    border-bottom : 2px solid #F32D27;
+}
+
+
+.outter{
+    padding: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.29);
     border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
 
-.card .card-heading.image .card-heading-header {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.card .card-heading.image .card-heading-header h3 {
-    margin: 0;
-    font-size: 14px;
-    line-height: 16px;
-    color: #262626;
-}
-
-.card .card-heading.image .card-heading-header span {
-    font-size: 12px;
-    color: #999999;
-}
-
-.card .card-body {
-    padding: 0 20px;
-    margin-top: 20px;
-}
-
-.card .card-media {
-    padding: 0 20px;
-    margin: 0 -14px;
-}
-
-.card .card-media img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.card .card-actions {
-    min-height: 30px;
-    padding: 0 20px 20px 20px;
-    margin: 20px 0 0 0;
-}
-
-.card .card-comments {
-    padding: 20px;
-    margin: 0;
-    background-color: #f8f8f8;
-}
-
-.card .card-comments .comments-collapse-toggle {
-    padding: 0;
-    margin: 0 20px 12px 20px;
-}
-
-.card .card-comments .comments-collapse-toggle a,
-.card .card-comments .comments-collapse-toggle span {
-    padding-right: 5px;
-    overflow: hidden;
-    font-size: 12px;
-    color: #999;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.card-comments .media-heading {
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.card.people {
-    position: relative;
-    display: inline-block;
-    width: 170px;
-    height: 300px;
-    padding-top: 0;
-    margin-left: 20px;
-    overflow: hidden;
-    vertical-align: top;
-}
-
-.card.people:first-child {
-    margin-left: 0;
-}
-
-.card.people .card-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    width: 170px;
-    height: 150px;
-    background-color: #ffffff;
-}
-
-.card.people .card-top.green {
-    background-color: #53a93f;
-}
-
-.card.people .card-top.blue {
-    background-color: #427fed;
-}
-
-.card.people .card-info {
-    position: absolute;
-    top: 150px;
-    display: inline-block;
-    width: 100%;
-    height: 101px;
-    overflow: hidden;
-    background: #ffffff;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.card.people .card-info .title {
-    display: block;
-    margin: 8px 14px 0 14px;
-    overflow: hidden;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 18px;
-    color: #404040;
-}
-
-.card.people .card-info .desc {
-    display: block;
-    margin: 8px 14px 0 14px;
-    overflow: hidden;
-    font-size: 12px;
-    line-height: 16px;
-    color: #737373;
-    text-overflow: ellipsis;
-}
-
-.card.people .card-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    padding: 10px 20px;
-    line-height: 29px;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.card.hovercard {
-    position: relative;
-    padding-top: 0;
-    overflow: hidden;
-    text-align: center;
-    background-color: rgba(214, 224, 226, 0.2);
-}
-
-.card.hovercard .cardheader {
-    background: url("./testimage/1.png");
-    background-size: cover;
-    height: 380px;
-	width:100%;
-}
-
-.card.hovercard .avatar {
-    position: relative;
-    top: -50px;
-    margin-bottom: -50px;
-	z-index:6;
-}
-
-.card.hovercard .avatar img {
-    width: 100px;
-    height: 100px;
-    max-width: 100px;
-    max-height: 100px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: 5px solid rgba(255,255,255,0.5);
-}
-
-.card.hovercard .info {
-    padding: 4px 8px 10px;
-	top:-50px;
-	position:relative;
-}
-
-.card.hovercard .info .title {
-    margin-bottom: 4px;
-    font-size: 24px;
-    line-height: 1;
-    color: #262626;
-    vertical-align: middle;
-	margin-top:50px;
-}
-
-.card.hovercard .info .desc {
-    overflow: hidden;
-    font-size: 12px;
-    line-height: 20px;
-    color: #737373;
-    text-overflow: ellipsis;
-}
-
-.card.hovercard .bottom {
-    padding: 0 20px;
-	background-color:white;
-	margin-top:-50px;
-}
-
-.btnround{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
-.exit{
-position:relative;
-top:0px;
-left:20px;
-color:white;
-text-align:left;
-}
 </style>
-	</head>
+<script>
+
+function showdel(aa){
+	 var con = document.getElementById(aa);
+	 if( con.style.display == 'block'){
+	  con.style.display = 'none';
+	 }
+	 else{
+	  con.style.display = 'block';
+	 }
+	}
+</script>
+</head>
 <body>
-<div class="container profile" id='pro'>
+<%@include file="./sidebar.jsp" %>
+<div class="container">
 	<div class="row">
-
-		<div class="col-lg-4 col-sm-6">
-
-            <div class="card hovercard">
-                <div class="cardheader">
-				<div class="exit" id="prodel" onclick="prodel('pro')">X</div>
-                </div>
-                <div class="avatar">
-
-                    <img alt="" src="./testimage/2.jpg">
-                </div>
-                <div class="info">
-                    <div class="title">
-                        <br>
-						<br>
-						<br>
-						<br>
-                </div>
-                <div class="bottom">
+<div class="col-2"></div>
+			<div class="col-10">
+			<div class="container">
+<div class="row">
+<div class="col-md-4 ">
+	<div class="row login_box">
+	    <div class="col-md-12 col-xs-12" align="center">
+            <div class="line"><h3>&nbsp</h3></div>
+            <div class="outter"><img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="image-circle"/></div>   
+            <h1 style="color:#fff">Hi Guest</h1>
+            <span style="color:#fff">INDIAN</span>
+	    </div>
+        <div><h3>&nbsp</h3></div>
+        <div class="col-md-12 col-xs-12 login_control">
                 
+                <div class="control">
+                    <div class="label">Email Address</div>
+                    admin@gmail.com
                 </div>
-            </div>
-
+                
+                <!--<div class="control">
+                     <div class="label">Password</div>
+                    <input type="password" class="form-control" value="123456"/>
+                </div>
+				<div class="control">
+                     <div class="label">Confirm Password</div>
+                    <input type="password" class="form-control" value="123456"/>
+                </div>-->
+             <div align="center">
+                     <button class="btn btn-orange" style="color:#fff" onclick="showdel('aaa')">채팅</button>
+                </div>
+                
         </div>
-
-	</div>
-	<div class="col-lg-8 col-sm-6 card">
+        
+        
+        </div>    
+    </div>
+    <div class="col-lg-8 col-sm-6"style="background-color:#fff" id="aaa">
 	<div class="row">
   <div class="col-md-2"></div>
-    <div class="col-md-8 order-md-1">
+    <div class="col-md-8 order-md-1" >
    
       <form class="needs-validation" novalidate>
         <div class="row">
@@ -322,58 +222,45 @@ text-align:left;
 
 
         <div class="mb-3">
-          <label for="user">이름</label>
-          <input type="text" class="form-control" id="user" value="${user.getName()}" required>
+          <label for="user"  style="color:#000">이름</label>
+          <input type="text" class="form-control" id="user" value="홍길동" required>
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
           </div>
         </div>
 
         <div class="mb-3">
-          <label for="emai;">이메일</label>
-          <input type="email" class="form-control" id="email" placeholder="example@naver.com" value="${user.getEmail()}">
+          <label for="email"  style="color:#000">이메일</label>
+          <input type="email" class="form-control" id="email" placeholder="example@naver.com" value="gildong@naver.com">
 
         </div>
 
-        <div class="mb-3">
-          <label for="address2">상태메세지</label>
-          <input type="text" class="form-control" id="address2" value="길동이입니다">
-        </div>
+       
 
-        <div class="row">
-   
-          <div class="col-md-6 mb-3">
-            <label for="zip">아이디</label>
-            <input type="text" class="form-control" id="zip" placeholder="#7612" value="${id}" readonly>
+        <div class=" mb-3">
+            <label for="zip"  style="color:#000">아이디</label>
+            <input type="text" class="form-control" id="zip" placeholder="admin" readonly>
             <div class="invalid-feedback">
               Zip code required.
             </div>
           </div>
-          <div class="col-md-6 mb-3">
-            <label for="zip">생년월일</label>
-            <input type="text" class="form-control" id="zip" placeholder="#7612" value="${user.getBirth()}" readonly>
-            <div class="invalid-feedback">
-              Zip code required.
-            </div>
-          </div>
-        </div>
-		<div class="row">
+     
+		
    
-          <div class="col-md-6 mb-3">
-            <label for="zip">비밀번호</label>
+          <div class=" mb-3">
+            <label for="zip"  style="color:#000">비밀번호</label>
             <input type="password" class="form-control" id="zip" >
             <div class="invalid-feedback">
               Zip code required.
             </div>
           </div>
-		   <div class="col-md-6 mb-3">
-            <label for="zip">비밀번호확인</label>
+		   <div class="mb-3">
+            <label for="zip"  style="color:#000">비밀번호확인</label>
             <input type="password" class="form-control" id="zip" >
             <div class="invalid-feedback">
               Zip code required.
             </div>
           </div>
-        </div>
      
         <hr class="mb-4">
         <button class="btn btn-outline-success btn-lg btn-block" type="submit">수정하기</button>
@@ -383,17 +270,17 @@ text-align:left;
 
 
 </div>
-	</div>
-</div>
 
+    </div>
+    </div>
+    
+			</div>
+			</div>
+			</div>
+			
 
-                              <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		
-
-<!-- ${user.getEmail()} -->
-</body>
 </html>

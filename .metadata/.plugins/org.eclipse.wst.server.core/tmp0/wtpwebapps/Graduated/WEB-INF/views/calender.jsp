@@ -162,6 +162,11 @@ header {
  
 %>
 <body>
+<%@include file="./sidebar.jsp" %>
+<div class="container">
+	<div class="row">
+<div class="col-2"></div>
+			<div class="col-10">
 <div id="calendar-wrap">
  <header>
       <h1><a href="?y=<%=prevYear%>&m=<%=prevMonth%>">◁</a> <%=year%>년 <%=month+1%>월 <a href="?y=<%=nextYear%>&m=<%=nextMonth%>">▷</a></h1>
@@ -236,6 +241,9 @@ System.out.println(item.getGanG());
     for (int i=cal.get(Calendar.DAY_OF_WEEK); i<=7; i++) out.println(" <li class='day'><div class='date'>&nbsp</div></li>");
 %>
        
+</div>
+</div>
+</div>
 </div>
 </div>
 

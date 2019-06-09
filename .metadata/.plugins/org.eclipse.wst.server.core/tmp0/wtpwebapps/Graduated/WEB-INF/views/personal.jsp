@@ -130,7 +130,7 @@ function showdel(aa){
 			<div class="addon">
 <ul>
             <li class="clearfix">
-              <a href="#" target="_blank">
+              <a href="profile" target="_blank">
               <img class="round" src="https://8share-production-my.s3.amazonaws.com/campaigns/4898/photos/profile/thumb_copy.png?1397732185">
               <div class="legend-info">
                 <strong>내자신</strong>상태메세지
@@ -144,7 +144,7 @@ function showdel(aa){
           <p onclick="showdel('aa')">그룹1</p>
           <ul id='aa'>
             <li class="clearfix">
-              <a href="#" target="_blank">
+              <a href="personalchat" target="_blank">
               <img class="round" src="https://8share-production-my.s3.amazonaws.com/campaigns/4898/photos/profile/thumb_copy.png?1397732185">
               <div class="legend-info">
                 <strong>Social Good</strong>Help share a cause and do good.

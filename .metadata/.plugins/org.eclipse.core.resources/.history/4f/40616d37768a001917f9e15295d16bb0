@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+function test(){
+ var con = document.getElementsByName("chk");
+for(var i=0;i<con.length;i++){
+    if(con[i].style.display=='none'){
+        con[i].style.display = 'block';
+    }else{
+        con[i].style.display = 'none';
+    }
+	}
+}
+function profile(aa){
+
+ var con = document.getElementById(aa);
+ con.style.display = 'block';
+	
+}
+
+function prodel(aa){
+ var con = document.getElementById(aa);
+ con.style.display = 'none';
+}
+</script>
+</head>
+<body>
+<%@include file="./sidebar.jsp" %>
+<div class="container">
+	<div class="row">
+<div class="col-2"></div>
+			<div class="col-10">
+
+</body>
+</html>

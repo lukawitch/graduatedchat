@@ -77,7 +77,7 @@ public class IndexController {
         return "joinsuccess";
     }
     
-    @RequestMapping(value="/profile",method= RequestMethod.GET)
+    /*@RequestMapping(value="/profile",method= RequestMethod.GET)
     public String profile(@ModelAttribute Uservo vo,Model model
     		 ,HttpServletRequest request
              , HttpServletResponse response
@@ -88,7 +88,7 @@ public class IndexController {
     	session.setAttribute("user",vo);
     	System.out.println(vo.getEmail());
     	return "profile";
-    }
+    }*/
     
     @RequestMapping(value="/chat",method= RequestMethod.GET)
     public String chat() {
@@ -98,7 +98,9 @@ public class IndexController {
     @RequestMapping(value="/personal",method= RequestMethod.GET)
     public String personal(HttpSession session) {
     	session.setAttribute("mode", "personal");
-    	return "personal";
+    	String a=String.valueOf(session.getAttribute("mode"));
+    	
+    	return a;
     }
     @RequestMapping(value="/logout",method= RequestMethod.GET)
     public String logout(HttpSession session) {
@@ -119,5 +121,19 @@ public class IndexController {
     public String calender() {
     	
     	return "calender";
+    }
+    @RequestMapping(value="/messageview",method= RequestMethod.GET)
+    public String messageview() {
+    	
+    	return "messageview";
+    }
+    @RequestMapping(value="/personalchat",method= RequestMethod.GET)
+    public String personalchat() {
+    	
+    	return "personalchat";
+    }
+    @RequestMapping(value="/profile",method= RequestMethod.GET)
+    public String profile() {
+    	return "profile";
     }
 }
