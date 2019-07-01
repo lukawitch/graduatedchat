@@ -181,15 +181,15 @@ function showdel(aa){
 	    <div class="col-md-12 col-xs-12" align="center">
             <div class="line"><h3>&nbsp</h3></div>
             <div class="outter"><img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="image-circle"/></div>   
-            <h1 style="color:#fff">Hi Guest</h1>
-            <span style="color:#fff">INDIAN</span>
+            <h1 style="color:#fff">${name}</h1>
+            <span style="color:#fff">${id}</span>
 	    </div>
         <div><h3>&nbsp</h3></div>
         <div class="col-md-12 col-xs-12 login_control">
                 
                 <div class="control">
                     <div class="label">Email Address</div>
-                    admin@gmail.com
+                    ${email}
                 </div>
                 
                 <!--<div class="control">
@@ -223,7 +223,7 @@ function showdel(aa){
 
         <div class="mb-3">
           <label for="user"  style="color:#000">이름</label>
-          <input type="text" class="form-control" id="user" value="홍길동" required>
+          <input type="text" class="form-control" id="user" value="${name}" required>
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
           </div>
@@ -231,7 +231,7 @@ function showdel(aa){
 
         <div class="mb-3">
           <label for="email"  style="color:#000">이메일</label>
-          <input type="email" class="form-control" id="email" placeholder="example@naver.com" value="gildong@naver.com">
+          <input type="email" class="form-control" id="email" placeholder="example@naver.com" value="${email}">
 
         </div>
 
@@ -239,7 +239,7 @@ function showdel(aa){
 
         <div class=" mb-3">
             <label for="zip"  style="color:#000">아이디</label>
-            <input type="text" class="form-control" id="zip" placeholder="admin" readonly>
+            <input type="text" class="form-control" id="zip" placeholder="${id} " readonly>
             <div class="invalid-feedback">
               Zip code required.
             </div>

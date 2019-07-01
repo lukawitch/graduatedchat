@@ -13,8 +13,9 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="com.chat.graduated.model.Profile"/>
-<fullyQualifiedTypeName name="com.chat.graduated.model.User"/>
-<fullyQualifiedTypeName name="com.chat.graduated.vo.Uservo"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="com.chat.graduated.vo.CalenderVo"/>
+<fullyQualifiedTypeName name="com.chat.graduated.model.User"/>
+<fullyQualifiedTypeName name="com.chat.graduated.vo.Uservo"/>
+<fullyQualifiedTypeName name="com.chat.graduated.model.GetUserInfo"/>
 </qualifiedTypeNameHistroy>

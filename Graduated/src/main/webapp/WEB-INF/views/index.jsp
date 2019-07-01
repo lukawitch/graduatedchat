@@ -51,7 +51,7 @@ function removeChar(event) {
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="success" method="post" role="form" style="display: block;">
+								<form id="login-form" action="loginProcess" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="id" id="username" tabindex="1" class="form-control" placeholder="ID" value="">
 									</div>

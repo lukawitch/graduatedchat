@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chat.graduated.model.GetUserInfo;
 import com.chat.graduated.model.Join;
 import com.chat.graduated.model.Profile;
 import com.chat.graduated.model.User;
@@ -22,7 +23,7 @@ import com.chat.graduated.vo.Uservo;
 public class IndexController {
 	String a;
 	String res;
-    @RequestMapping(value = "/success",method=RequestMethod.POST)
+    @RequestMapping(value = "loginProcess",method=RequestMethod.POST)
     public String hello(@ModelAttribute Uservo vo,Model model,HttpSession session) {
     	System.out.println(vo.getId());
     	System.out.println(vo.getPw());
@@ -33,8 +34,13 @@ public class IndexController {
     		
     	}
     	else {
-    		model.addAttribute("name",a);
-    		session.setAttribute("id",vo.getId());
+    		Uservo userinfo= new Uservo();
+    		GetUserInfo info = new GetUserInfo();
+    		userinfo=info.check();
+    		System.out.println(userinfo.getId());
+    		session.setAttribute("id",userinfo.getId());
+    		session.setAttribute("name",userinfo.getName());
+    		session.setAttribute("email",userinfo.getEmail());
     		res="success";
     	}
     	model.addAttribute("user", vo);
@@ -42,7 +48,12 @@ public class IndexController {
         return res;
     }
     
-    @RequestMapping(value="/join",method=RequestMethod.POST)
+    private Uservo info() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@RequestMapping(value="/join",method=RequestMethod.POST)
     public String join( @RequestParam(value="id", required=true) String userId
             , @RequestParam(value="pw",required=true) String password
             , @RequestParam(value="email",required=true) String email
@@ -102,7 +113,7 @@ public class IndexController {
     	
     	return a;
     }
-    @RequestMapping(value="/logout",method= RequestMethod.GET)
+    @RequestMapping(value="/index",method= RequestMethod.GET)
     public String logout(HttpSession session) {
     	session.invalidate();
     	return "index";
@@ -136,4 +147,5 @@ public class IndexController {
     public String profile() {
     	return "profile";
     }
+    
 }
