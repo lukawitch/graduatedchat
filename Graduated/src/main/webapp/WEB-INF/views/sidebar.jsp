@@ -15,7 +15,7 @@
               <ul class="navbar-nav">
               <li class="nav-item dropdown messages-menu">
 				
-                  <a class="nav-link dropdown-toggle" href="success">
+                  <a class="nav-link dropdown-toggle" href="main">
                     <i class="fa fa-home" aria-hidden="true"></i>
                   </a>
                  
@@ -172,7 +172,7 @@
             <ul class="list-sidebar bg-defoult">
     
          
-            <li> <a href="personal" class="collapsed active" > <i class="fa fa-users fa-3x"></i> <span class="nav-label">Change</span> </a></li>
+            <li> <a href="mode" class="collapsed active" > <i class="fa fa-users fa-3x"></i> <span class="nav-label">Change</span> </a></li>
          
               
             <li> <a href="group"><i class="fa fa-plus fa-3x"></i> <span class="nav-label">GAdd</span></a> </li>

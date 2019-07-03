@@ -1,0 +1,5 @@
+package com.chat.graduated.model;
+
+public class ProfileEdit {
+
+}

@@ -214,7 +214,7 @@ function showdel(aa){
   <div class="col-md-2"></div>
     <div class="col-md-8 order-md-1" >
    
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation" action="modified">
         <div class="row">
 
         </div>
@@ -223,7 +223,7 @@ function showdel(aa){
 
         <div class="mb-3">
           <label for="user"  style="color:#000">이름</label>
-          <input type="text" class="form-control" id="user" value="${name}" required>
+          <input type="text" class="form-control" name="user" id="user" value="${name}" required>
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
           </div>
@@ -231,7 +231,7 @@ function showdel(aa){
 
         <div class="mb-3">
           <label for="email"  style="color:#000">이메일</label>
-          <input type="email" class="form-control" id="email" placeholder="example@naver.com" value="${email}">
+          <input type="email" class="form-control" name="email" id="email" placeholder="example@naver.com" value="${email}">
 
         </div>
 
@@ -239,7 +239,7 @@ function showdel(aa){
 
         <div class=" mb-3">
             <label for="zip"  style="color:#000">아이디</label>
-            <input type="text" class="form-control" id="zip" placeholder="${id} " readonly>
+            <input type="text" class="form-control" name="id" id="zip" placeholder="${id} " value="${id} " readonly>
             <div class="invalid-feedback">
               Zip code required.
             </div>
@@ -248,18 +248,14 @@ function showdel(aa){
 		
    
           <div class=" mb-3">
-            <label for="zip"  style="color:#000">비밀번호</label>
-            <input type="password" class="form-control" id="zip" >
-            <div class="invalid-feedback">
-              Zip code required.
-            </div>
+            <label for="a"  style="color:#000">비밀번호</label>
+            <input type="password" class="form-control" name="password" id="a" required>
+     
           </div>
 		   <div class="mb-3">
-            <label for="zip"  style="color:#000">비밀번호확인</label>
-            <input type="password" class="form-control" id="zip" >
-            <div class="invalid-feedback">
-              Zip code required.
-            </div>
+            <label for="a"  style="color:#000">비밀번호확인</label>
+            <input type="password" class="form-control" name="passwordchk" id="a" required>
+ 
           </div>
      
         <hr class="mb-4">

@@ -1,5 +1,6 @@
 package com.chat.graduated;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.chat.graduated.model.GetUserInfo;
 import com.chat.graduated.model.Join;
 import com.chat.graduated.model.Profile;
+import com.chat.graduated.model.ProfileEdit;
 import com.chat.graduated.model.User;
 import com.chat.graduated.vo.Uservo;
 
@@ -30,7 +32,7 @@ public class IndexController {
     	User user=new User();
     	a=user.check(vo.getId(),vo.getPw());
     	if(a.equals("admin_NO")) {
-    		res="index";
+    		res="redirect:/main";
     		
     	}
     	else {
@@ -41,7 +43,7 @@ public class IndexController {
     		session.setAttribute("id",userinfo.getId());
     		session.setAttribute("name",userinfo.getName());
     		session.setAttribute("email",userinfo.getEmail());
-    		res="success";
+    		res="redirect:/main";
     	}
     	model.addAttribute("user", vo);
     	
@@ -102,15 +104,29 @@ public class IndexController {
     }*/
     
     @RequestMapping(value="/chat",method= RequestMethod.GET)
-    public String chat() {
+    public void chat() {
     	
-    	return "chat";
     }
     @RequestMapping(value="/personal",method= RequestMethod.GET)
-    public String personal(HttpSession session) {
-    	session.setAttribute("mode", "personal");
-    	String a=String.valueOf(session.getAttribute("mode"));
+    public void personal() {
+
     	
+    	
+    }
+    @RequestMapping(value="/mode",method= RequestMethod.GET)
+    public String mode(HttpSession session) {
+    	String a=null;
+    	if(session.getAttribute("mode")==null) {
+    		System.out.println("ddd");
+    	session.setAttribute("mode", "personal");
+    	a="redirect:/personal";}
+    	else if(String.valueOf(session.getAttribute("mode")).equals("personal")) {
+    	session.setAttribute("mode", "main");
+    	a="redirect:/main";}
+    	else {
+    		session.setAttribute("mode", "personal");
+        	a="redirect:/personal";
+    	}
     	return a;
     }
     @RequestMapping(value="/index",method= RequestMethod.GET)
@@ -119,33 +135,73 @@ public class IndexController {
     	return "index";
     }
     @RequestMapping(value="/group",method= RequestMethod.GET)
-    public String group() {
+    public void group() {
     	
-    	return "makegroup";
     }
     @RequestMapping(value="/useradd",method= RequestMethod.GET)
-    public String useradd() {
-    	
-    	return "useradd";
+    public void useradd() {
+    
     }
     @RequestMapping(value="/calender",method= RequestMethod.GET)
-    public String calender() {
-    	
-    	return "calender";
+    public void calender() {
+  
     }
     @RequestMapping(value="/messageview",method= RequestMethod.GET)
-    public String messageview() {
+    public void messageview() {
+
+    }
+    @RequestMapping(value="/test",method= RequestMethod.GET)
+    public void test() {
     	
-    	return "messageview";
     }
     @RequestMapping(value="/personalchat",method= RequestMethod.GET)
-    public String personalchat() {
-    	
-    	return "personalchat";
+    public void personalchat() {
+
     }
     @RequestMapping(value="/profile",method= RequestMethod.GET)
-    public String profile() {
-    	return "profile";
+    public void profile() {
+
+    }
+    @RequestMapping(value="/modified",method= RequestMethod.GET)
+    public String modified(
+    		@RequestParam(value="user", required=true) String username,
+    		@RequestParam(value="email", required=true) String useremail,
+    		@RequestParam(value="password", required=true) String userpassword,
+    		@RequestParam(value="passwordchk", required=true) String userpasswordchk,
+    		@RequestParam(value="id", required=true) String id,
+    		 HttpServletRequest request
+             , HttpServletResponse response
+             ,HttpSession session 
+    		) throws IOException {
+    	System.out.println(username);
+    	System.out.println(useremail);
+    	String a="redirect:/test";
+    	if(!userpassword.equals(userpasswordchk)) {
+    		response.setContentType("text/html; charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            out.println("<script>alert('비밀번호를 다시 확인해주세요'); history.go(-1);</script>");
+             
+            response.sendRedirect("/profile");
+            out.flush();
+            a="profile";
+    	}
+    	else {
+    		ProfileEdit pro = new ProfileEdit();
+    		pro.update(id, userpassword, useremail, username);
+    		Uservo userinfo= new Uservo();
+    		GetUserInfo info = new GetUserInfo();
+    		userinfo=info.check();
+    		System.out.println(userinfo.getId());
+    		session.setAttribute("id",userinfo.getId());
+    		session.setAttribute("name",userinfo.getName());
+    		session.setAttribute("email",userinfo.getEmail());
+    	}
+    	return a;
+    }
+    
+    @RequestMapping(value="/main",method= RequestMethod.GET)
+    public String main() {
+    		return "success";
     }
     
 }

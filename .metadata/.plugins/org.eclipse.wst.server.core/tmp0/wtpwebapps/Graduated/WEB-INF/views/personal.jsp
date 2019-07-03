@@ -130,7 +130,7 @@ function showdel(aa){
 			<div class="addon">
 <ul>
             <li class="clearfix">
-              <a href="profile" target="_blank">
+              <a href="profile">
               <img class="round" src="https://8share-production-my.s3.amazonaws.com/campaigns/4898/photos/profile/thumb_copy.png?1397732185">
               <div class="legend-info">
                 <strong>내자신</strong>상태메세지
