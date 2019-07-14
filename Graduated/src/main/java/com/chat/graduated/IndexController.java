@@ -18,6 +18,7 @@ import com.chat.graduated.model.GetUserInfo;
 import com.chat.graduated.model.Join;
 import com.chat.graduated.model.Profile;
 import com.chat.graduated.model.ProfileEdit;
+import com.chat.graduated.model.SearchUser;
 import com.chat.graduated.model.User;
 import com.chat.graduated.vo.Uservo;
 
@@ -38,7 +39,7 @@ public class IndexController {
     	else {
     		Uservo userinfo= new Uservo();
     		GetUserInfo info = new GetUserInfo();
-    		userinfo=info.check();
+    		userinfo=info.check(vo.getId());
     		System.out.println(userinfo.getId());
     		session.setAttribute("id",userinfo.getId());
     		session.setAttribute("name",userinfo.getName());
@@ -140,7 +141,17 @@ public class IndexController {
     }
     @RequestMapping(value="/useradd",method= RequestMethod.GET)
     public void useradd() {
-    
+  
+    }
+    @RequestMapping(value="/searchuser",method= RequestMethod.POST)
+    public String searchuser( @RequestParam(value="id", required=true) String userId) {
+    SearchUser search = new SearchUser();
+   Uservo user = new Uservo();
+    user=search.check(userId);
+    System.out.println(user.getId());
+    System.out.println(user.getName());
+    return "redirect:/useradd";
+  
     }
     @RequestMapping(value="/calender",method= RequestMethod.GET)
     public void calender() {
@@ -190,7 +201,7 @@ public class IndexController {
     		pro.update(id, userpassword, useremail, username);
     		Uservo userinfo= new Uservo();
     		GetUserInfo info = new GetUserInfo();
-    		userinfo=info.check();
+    		userinfo=info.check(id);
     		System.out.println(userinfo.getId());
     		session.setAttribute("id",userinfo.getId());
     		session.setAttribute("name",userinfo.getName());

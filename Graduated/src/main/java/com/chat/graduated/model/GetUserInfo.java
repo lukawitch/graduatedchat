@@ -17,8 +17,8 @@ public class GetUserInfo {
 	String sql=null;
 	Connection con=null;
 	Uservo user= new Uservo();
-	public Uservo check() {
-		sql="select * from user where id='admin'";
+	public Uservo check(String a) {
+		sql="select * from user where id='"+a+"'";
 		JDBCUtil aa= new JDBCUtil();
 		try {
 			con=aa.testConnection();

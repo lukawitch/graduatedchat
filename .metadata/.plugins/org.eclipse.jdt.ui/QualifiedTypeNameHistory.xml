@@ -15,8 +15,9 @@
 <fullyQualifiedTypeName name="com.chat.graduated.model.Profile"/>
 <fullyQualifiedTypeName name="com.chat.graduated.vo.CalenderVo"/>
 <fullyQualifiedTypeName name="com.chat.graduated.model.User"/>
-<fullyQualifiedTypeName name="com.chat.graduated.vo.Uservo"/>
 <fullyQualifiedTypeName name="com.chat.graduated.model.GetUserInfo"/>
 <fullyQualifiedTypeName name="com.chat.graduated.model.ProfileEdit"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="com.chat.graduated.model.SearchUser"/>
+<fullyQualifiedTypeName name="com.chat.graduated.vo.Uservo"/>
 </qualifiedTypeNameHistroy>
