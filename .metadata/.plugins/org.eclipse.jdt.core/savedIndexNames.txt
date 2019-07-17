@@ -7,7 +7,6 @@ INDEX VERSION 1.131+C:\Users\hestia\Desktop\chattest\graduated\graduatedchat\.me
 3064462347.index
 293692079.index
 1783242628.index
-428210552.index
 1621790465.index
 71018339.index
 3649039425.index
