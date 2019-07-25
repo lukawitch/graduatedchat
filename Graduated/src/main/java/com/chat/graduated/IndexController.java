@@ -140,16 +140,25 @@ public class IndexController {
     	
     }
     @RequestMapping(value="/useradd",method= RequestMethod.GET)
-    public void useradd() {
-  
+    public void useradd(HttpSession session) {
+    	 String name=(String)session.getAttribute("searchname");
+         if(name==null){
+         	session.setAttribute("searchname","mmm");
+         }
+    	
     }
     @RequestMapping(value="/searchuser",method= RequestMethod.POST)
-    public String searchuser( @RequestParam(value="id", required=true) String userId) {
+    public String searchuser( @RequestParam(value="id", required=true) String userId
+    							,HttpSession session ) {
     SearchUser search = new SearchUser();
    Uservo user = new Uservo();
     user=search.check(userId);
     System.out.println(user.getId());
     System.out.println(user.getName());
+    session.removeAttribute("searchname");
+    session.removeAttribute("searchid");
+    session.setAttribute("searchname",user.getName());
+    session.setAttribute("searchid",user.getId());
     return "redirect:/useradd";
   
     }
