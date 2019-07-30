@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c"  uri="http://java.sun.com/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,6 +40,41 @@
                             </div>
                     </div>
                     </form>
+                    <div>
+                    <%
+                    String name=(String)session.getAttribute("searchname");
+                    String id=(String)session.getAttribute("searchid");
+                  System.out.println(name);
+                    if(name.equals("mmm")){
+                    	
+                    
+                    %>
+					<h3> </h3>
+					<%}
+                    else{
+                    System.out.println(name);%>
+                   <h3> 	</h3>
+                   <table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">ID</th>
+      <th scope="col">name</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr  onClick = " location.href='usergroupadd'">
+      <td>${id}</td>
+      <td>${name}</td>
+    </tr>
+  </tbody>
+</table>
+                   
+                    	
+                    <%session.removeAttribute("searchid");
+                    session.removeAttribute("searchname");
+                    }%>                    
+                    </div>
                 </div>
             </div>
         </div>

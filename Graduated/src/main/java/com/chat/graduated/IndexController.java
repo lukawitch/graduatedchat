@@ -98,7 +98,7 @@ public class IndexController {
 	 * new Profile(); String id = (String)session.getAttribute("id");
 	 * vo=profile.select(id); session.setAttribute("user",vo);
 	 * System.out.println(vo.getEmail()); return "profile"; }
-	
+
 
 	@RequestMapping(value = "/chat", method = RequestMethod.GET)
 	public String chat(@RequestParam(value = "pin", required = true) String pin, Model model) {
@@ -118,10 +118,10 @@ public class IndexController {
 		//System.out.println(vo.get);
 		//for(int i=0;i<vo.size();i++){System.out.println("controller에서 "+vo.get(i).getUserid());}
 		return "chat";
-	} 
-	
-	
-	
+	}
+
+
+
 	/*
 	@RequestMapping(value = "/chat")
 	public ModelAndView boardList(@RequestParam(value = "pin", required = true) String pin) throws Exception{
@@ -240,7 +240,10 @@ public class IndexController {
 		}
 		return a;
 	}
+	@RequestMapping(value="/usergroupadd",method= RequestMethod.GET)
+	public void usergrupadd() {
 
+	}
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main() {
 		return "success";
