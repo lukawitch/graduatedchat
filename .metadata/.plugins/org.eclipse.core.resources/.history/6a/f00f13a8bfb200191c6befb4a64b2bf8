@@ -176,14 +176,12 @@ public class IndexController {
 	}
 
 	@RequestMapping(value = "/searchuser", method = RequestMethod.POST)
-	public String searchuser(@RequestParam(value = "id", required = true) String userId,HttpSession session) {
+	public String searchuser(@RequestParam(value = "id", required = true) String userId) {
 		SearchUser search = new SearchUser();
 		Uservo user = new Uservo();
 		user = search.check(userId);
 		System.out.println(user.getId());
 		System.out.println(user.getName());
-		session.setAttribute("searchname",user.getName());
-		session.setAttribute("searchuser",user.getId());
 		return "redirect:/useradd";
 
 	}

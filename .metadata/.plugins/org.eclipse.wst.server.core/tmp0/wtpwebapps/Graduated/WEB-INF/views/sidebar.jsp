@@ -175,7 +175,7 @@
             <li> <a href="mode" class="collapsed active" > <i class="fa fa-users fa-3x"></i> <span class="nav-label">Change</span> </a></li>
          
               
-            <li> <a href="group"><i class="fa fa-plus fa-3x"></i> <span class="nav-label">GAdd</span></a> </li>
+            <li> <a href="makegroup"><i class="fa fa-plus fa-3x"></i> <span class="nav-label">GAdd</span></a> </li>
             <li> <a href="useradd" class="collapsed active" > <i class="fa fa-user-plus fa-3x"></i> <span class="nav-label">UAdd</span>  </a></li>
           <li> <a href="#"><i class="fa fa-user-times fa-3x"></i> <span class="nav-label">Delete</span></a> </li>
           <li> <a href="logout" class="collapsed active" ><i class="fa fa-sign-out fa-3x"></i> <span class="nav-label">Signout</span></a></li>

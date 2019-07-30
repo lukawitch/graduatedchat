@@ -81,7 +81,7 @@
 									src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg"
 									class="media-photo">
 							</a></td>
-							<td><a href="chat">
+							<td><a href="chat?pin=<%=vo.getPin()%>">
 									<div class="media">
 
 										<div class="media-body">
