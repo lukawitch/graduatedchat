@@ -116,8 +116,7 @@ public class IndexController {
 		vo = gg.gmemberlist(pin);
 		model.addAttribute("GG", vo);
 		//System.out.println(vo.get);
-		for(int i=0;i<vo.size();i++){System.out.println("controller에서 "+vo.get(i).getUserid());}
-		
+		//for(int i=0;i<vo.size();i++){System.out.println("controller에서 "+vo.get(i).getUserid());}
 		return "chat";
 	} 
 	

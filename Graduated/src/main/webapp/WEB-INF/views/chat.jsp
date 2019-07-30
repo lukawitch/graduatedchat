@@ -27,11 +27,6 @@
 </script>
 </head>
 <body>
-
-	<c:forEach var="list" items="${GG }">
-		<span> ${list.userid}</span>
-	</c:forEach>
-
 	<%@include file="./sidebar.jsp"%>
 	<div class="container">
 		<div class="row">
@@ -89,7 +84,7 @@
 									</div>
 								</li>
 								<li>
-									<div class="d-flex bd-highlight">
+									<div cdlass="d-flex bd-highlight">
 										<div class="img_cont">
 											<img
 												src="https://i.pinimg.com/originals/54/6e/6d/546e6d4c6ce4322e6aa3b2f8ca73ac28.jpg"

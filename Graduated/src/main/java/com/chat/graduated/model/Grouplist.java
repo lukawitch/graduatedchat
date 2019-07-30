@@ -79,8 +79,8 @@ public class Grouplist {
 				vo.setName(rs.getString("name"));
 				vo.setPin(rs.getString("pin"));
 				glist.add(vo);
-				System.out.println("grouplist.java에서 "+vo.getUserid());
-				System.out.println("grouplis.java에서 리스트 출력"+glist.get(0).getUserid());
+				//System.out.println("grouplist.java에서 "+vo.getUserid());
+				//System.out.println("grouplis.java에서 리스트 출력"+glist.get(0).getUserid());
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
