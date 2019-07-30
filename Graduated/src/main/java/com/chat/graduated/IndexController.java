@@ -147,6 +147,11 @@ public class IndexController {
          }
     	
     }
+    
+    @RequestMapping(value="/usergroupadd",method= RequestMethod.GET)
+    public void usergrupadd() {
+    	
+    }
     @RequestMapping(value="/searchuser",method= RequestMethod.POST)
     public String searchuser( @RequestParam(value="id", required=true) String userId
     							,HttpSession session ) {

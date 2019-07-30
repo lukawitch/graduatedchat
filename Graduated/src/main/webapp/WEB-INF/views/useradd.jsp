@@ -63,7 +63,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+   <tr  onClick = " location.href='usergroupadd'">
       <td>${id}</td>
       <td>${name}</td>
     </tr>
