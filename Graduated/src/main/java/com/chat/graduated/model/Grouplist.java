@@ -57,6 +57,48 @@ public class Grouplist {
 		return group;
 	}
 */
+	public List<Groupvo> gmemberlist( String pin){
+		List<Groupvo> glist=new ArrayList<Groupvo>();
+		JDBCUtil aa= new JDBCUtil();
+		sql="select * from grouplist where pin=?";
+		try {
+			con=aa.testConnection();
+			System.out.println(con);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, pin);
+			rs=ps.executeQuery();
+			while(rs.next()){
+				Groupvo vo = new Groupvo();
+				vo.setGpin(rs.getString("gpin"));
+				vo.setUserid(rs.getString("userid"));
+				vo.setName(rs.getString("name"));
+				vo.setPin(rs.getString("pin"));
+				glist.add(vo);
+				System.out.println("grouplist.java에서 "+vo.getUserid());
+				System.out.println("grouplis.java에서 리스트 출력"+glist.get(0).getUserid());
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			con.close();
+			ps.close();
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return glist;
+	}
+	
+	
 	public List<Groupvo> grouplist( String userid){
 		List<Groupvo> glist=new ArrayList<Groupvo>();
 		JDBCUtil aa= new JDBCUtil();
