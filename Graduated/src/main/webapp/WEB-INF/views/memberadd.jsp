@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,35 +17,46 @@
 </style>
 </head>
 <body>
+
 	<main class="login-form">
 	<div class="cotainer">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
 				<div class="card">
-					<div class="card-header">UserAdd</div>
+					<div class="card-header">memberAdd</div>
 					<div class="card-body">
-						<form action="searchuser" method="post">
+						<form action="search_member" method="get">
 							<div class="form-group row">
 								<label for="email_address"
 									class="col-md-4 col-form-label text-md-right">ID</label>
 								<div class="col-md-6">
-									<input type="text" id="email_address" class="form-control"
-										name="id" required autofocus>
+									<input type="text" class="form-control" name="idadd" required
+										autofocus>
 								</div>
 							</div>
-
 							<div class="col-md-6 offset-md-4">
 								<button type="submit" class="btn btn-primary">add</button>
 
 							</div>
+							<div>
+							
+							검색한 아이디 나오는 곳--------
+						
+								<c:forEach var="item" items="${GG }">
+										<a href="select_friend">	${item.userid} || ${item.name} </a>
+								</c:forEach>
+							
+							--------------------------
+
+							</div>
 						</form>
+
 					</div>
 
 				</div>
 			</div>
 		</div>
 	</div>
-
 	</main>
 </body>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

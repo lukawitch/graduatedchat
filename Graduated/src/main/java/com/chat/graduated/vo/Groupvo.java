@@ -1,14 +1,15 @@
 package com.chat.graduated.vo;
 
 public class Groupvo {
-	String gpin;
+	int gpin;
 	String userid;
 	String name;
-	String pin;
-	public String getGpin() {
+
+	
+	public int getGpin() {
 		return gpin;
 	}
-	public void setGpin(String gpin) {
+	public void setGpin(int gpin) {
 		this.gpin = gpin;
 	}
 	public String getUserid() {
@@ -23,11 +24,4 @@ public class Groupvo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPin() {
-		return pin;
-	}
-	public void setPin(String pin) {
-		this.pin = pin;
-	}
-	
 }

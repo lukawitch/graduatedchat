@@ -18,7 +18,35 @@ public class Grouplist {
 	ResultSet rs =null;
 	String sql=null;
 	Connection con=null;
-	Uservo user= new Uservo();
+	
+	//그룹 입력
+	int a;
+	public int input(String userid, String name) throws Exception{
+		//Groupvo group=new Groupvo();
+		JDBCUtil aa= new JDBCUtil();
+		sql="insert into group values(gpin.nextval,?,?)";
+		try {
+			con=aa.testConnection();
+			System.out.println(name);
+			ps=con.prepareStatement(sql);
+			ps.setString(1,userid);
+			ps.setString(2,name);
+			ps.executeUpdate();
+			System.out.println("데이터입력완료");
+			a=1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			con.close();
+			ps.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return a;
+	}
 	
 	/*
 	public Groupvo groupex(String userid){
@@ -57,10 +85,10 @@ public class Grouplist {
 		return group;
 	}
 */
-	public List<Groupvo> gmemberlist( String pin){
+	public List<Groupvo> gmemberlist(String gpin){
 		List<Groupvo> glist=new ArrayList<Groupvo>();
 		JDBCUtil aa= new JDBCUtil();
-		sql="select * from grouplist where pin=?";
+		sql="select * from grouplist where gpin=?";
 		try {
 			con=aa.testConnection();
 			System.out.println(con);
@@ -70,14 +98,13 @@ public class Grouplist {
 		}
 		try {
 			ps=con.prepareStatement(sql);
-			ps.setString(1, pin);
+			ps.setString(1, gpin);
 			rs=ps.executeQuery();
 			while(rs.next()){
 				Groupvo vo = new Groupvo();
-				vo.setGpin(rs.getString("gpin"));
+				vo.setGpin(rs.getInt("gpin"));
 				vo.setUserid(rs.getString("userid"));
 				vo.setName(rs.getString("name"));
-				vo.setPin(rs.getString("pin"));
 				glist.add(vo);
 				//System.out.println("grouplist.java에서 "+vo.getUserid());
 				//System.out.println("grouplis.java에서 리스트 출력"+glist.get(0).getUserid());
@@ -117,10 +144,9 @@ public class Grouplist {
 			
 			while(rs.next()){
 				Groupvo vo = new Groupvo();
-				vo.setGpin(rs.getString("gpin"));
+				vo.setGpin(rs.getInt("gpin"));
 				vo.setUserid(rs.getString("userid"));
 				vo.setName(rs.getString("name"));
-				vo.setPin(rs.getString("pin"));
 				glist.add(vo);
 			}
 		} catch (SQLException e) {

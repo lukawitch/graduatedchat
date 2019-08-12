@@ -109,18 +109,17 @@ public class IndexController {
 		//System.out.println(vo.get);
 		return "chat";
 	} */
+	
 	@RequestMapping(value = "/chat")
-	public String chat(@RequestParam(value = "pin", required = true) String pin, Model model) {
+	public String chat(@RequestParam(value = "gpin", required = true) String gpin, Model model) {
 		Grouplist gg = new Grouplist();
 		List<Groupvo> vo = new ArrayList<Groupvo>();
-		vo = gg.gmemberlist(pin);
+		vo = gg.gmemberlist(gpin);
 		model.addAttribute("GG", vo);
 		//System.out.println(vo.get);
 		//for(int i=0;i<vo.size();i++){System.out.println("controller에서 "+vo.get(i).getUserid());}
 		return "chat";
 	} 
-	
-	
 	
 	/*
 	@RequestMapping(value = "/chat")
@@ -162,17 +161,52 @@ public class IndexController {
 		session.invalidate();
 		return "index";
 	}
-
-	@RequestMapping(value = "/group", method = RequestMethod.GET)
-	public void group() {
-
+	@RequestMapping(value = "/makegroup", method = RequestMethod.GET)
+	public void makegroup (){
+	}
+	@RequestMapping(value = "/memberadd", method = RequestMethod.GET)
+	public void memberadd() {		
+	}
+	@RequestMapping(value = "/make_group", method = RequestMethod.GET)
+	public void make_group () {
 	}
 
+	
+	//	session.setAttribute("searchid", user.getId());
+	@RequestMapping(value = "/search_member", method = RequestMethod.GET)
+	public String search_member(
+			@RequestParam(value = "idadd", required = true) String userId, Model model) {
+		SearchUser search = new SearchUser();
+		Uservo user = new Uservo();
+		user = search.makeGroupUserSearch(userId);
+		if(user.getId() ==null){
+			user = search.makeGroupUserSearch(userId); System.out.println(user.getName());
+		}else{System.out.println("없다.null~");
+		}
+		System.out.println("searchtest: "+user.getId());
+		
+		//그룹
+		Grouplist gg = new Grouplist();
+		List<Groupvo> vo = new ArrayList<Groupvo>();
+		vo = gg.grouplist(user.getId());
+		model.addAttribute("GG", vo); //idadd
+		
+		
+		return "memberadd";
+	}
+
+	@RequestMapping(value = "/select_friend", method = RequestMethod.GET)
+	public String select_friend () {
+		return "makegroup";
+	}
+
+	
+	
+	
 	@RequestMapping(value = "/useradd", method = RequestMethod.GET)
 	public void useradd() {
 
 	}
-
 	@RequestMapping(value = "/searchuser", method = RequestMethod.POST)
 	public String searchuser(@RequestParam(value = "id", required = true) String userId) {
 		SearchUser search = new SearchUser();

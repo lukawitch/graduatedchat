@@ -9,8 +9,6 @@ import java.sql.Statement;
 import com.chat.graduated.dao.JDBCUtil;
 
 public class Join {
-	String id="admin";
-	int t;
 	PreparedStatement ps =null;
 	Statement sta =null;
 	ResultSet rs =null;
@@ -22,7 +20,6 @@ public class Join {
 	sql="insert into user(id,pw,email,name,birth) values(?,?,?,?,?)";
 
 	try {
-	
 		con=aa.testConnection();
 		System.out.println(name);
 		ps=con.prepareStatement(sql);
@@ -38,10 +35,6 @@ public class Join {
 		c=1;
 		e.printStackTrace();
 	}
-	
-
-		
-
 	try {
 		con.close();
 		ps.close();
