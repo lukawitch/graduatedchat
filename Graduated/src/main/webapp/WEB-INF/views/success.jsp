@@ -81,23 +81,25 @@
 									src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg"
 									class="media-photo">
 							</a></td>
-							<td><a href="chat?pin=<%=vo.getPin()%>">
+							<td><a href="chat?gpin=<%=vo.getGpin()%>">
 									<div class="media">
 
 										<div class="media-body">
 											<span class="media-meta pull-right">Febrero 13, 2016</span>
 											<h4 class="title">
 
-												<%=vo.getGpin()%>	:	<%=vo.getName()%>
+												<%=vo.getGpin()%> :	<%=vo.getName()%>
 												<span class="pull-right pagado">(new)</span>
 											</h4>
 											<p class="summary">Recent Messages...</p>
 										</div>
-									</div></td>
-							</a>
+									</div>
+							</a></td>
 						</tr>
 
-						<%		}		%>
+						<%
+							}
+						%>
 
 					</tbody>
 				</table>

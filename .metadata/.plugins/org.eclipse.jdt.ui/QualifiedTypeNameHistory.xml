@@ -17,7 +17,14 @@
 <fullyQualifiedTypeName name="com.chat.graduated.model.User"/>
 <fullyQualifiedTypeName name="com.chat.graduated.model.GetUserInfo"/>
 <fullyQualifiedTypeName name="com.chat.graduated.model.ProfileEdit"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="com.chat.graduated.model.SearchUserMember"/>
+<fullyQualifiedTypeName name="com.chat.graduated.model.Countgroupaccept"/>
 <fullyQualifiedTypeName name="com.chat.graduated.model.SearchUser"/>
 <fullyQualifiedTypeName name="com.chat.graduated.vo.Uservo"/>
+<fullyQualifiedTypeName name="com.chat.graduated.model.GetGroupAccept"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.chat.graduated.vo.GetGroupMember"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.chat.graduated.model.StateEdit"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>

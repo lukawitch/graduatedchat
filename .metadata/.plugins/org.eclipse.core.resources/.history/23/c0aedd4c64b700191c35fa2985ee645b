@@ -1,0 +1,85 @@
+package com.chat.graduated.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.chat.graduated.dao.JDBCUtil;
+import com.chat.graduated.vo.Uservo;
+
+public class Countgroupaccept {
+	
+	PreparedStatement ps =null;
+	Statement sta =null;
+	ResultSet rs =null;
+	String sql=null;
+	Connection con=null;
+	int num=0;
+	public int numcheck() {
+		sql="select count(*) from groupaccept";
+		JDBCUtil aa= new JDBCUtil();
+		try {
+			con=aa.testConnection();
+			System.out.println(con);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			ps=con.prepareStatement(sql);
+			rs=ps.executeQuery();
+			while(rs.next()){
+			num=rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			System.out.println("dfdfdfdfdfdfdfd");
+		}
+		try {
+			con.close();
+			ps.close();
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return num;
+	}
+	
+	public void insertcheck(int pin,String touser,String fromuser,String groupname) {
+		JDBCUtil aa= new JDBCUtil();
+		sql="insert into groupaccept(id,pw,email,name,birth) values(?,?,?,?,?)";
+
+		try {
+		
+			con=aa.testConnection();
+
+			ps=con.prepareStatement(sql);
+			ps.setInt(1,pin);
+			ps.setString(2,touser);
+			ps.setString(3,fromuser);
+			ps.setString(4,groupname);
+			ps.setString(5,"none");
+			ps.executeUpdate();
+			System.out.println("�������Է¿Ϸ�");
+			c=0;
+		}catch (Exception e) {
+			c=1;
+			e.printStackTrace();
+		}
+		
+
+			
+
+		try {
+			con.close();
+			ps.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return c;
+	}
+}

@@ -1,0 +1,144 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+.filebox input[type="file"] 
+{ position: absolute;
+width: 1px; 
+height: 1px; 
+padding: 0; 
+margin: -1px; 
+overflow: hidden; 
+clip:rect(0,0,0,0); border: 0; } 
+.filebox label { 
+display: inline-block; 
+padding: .5em .75em; 
+color: #999; 
+font-size: inherit; 
+line-height: normal; 
+vertical-align: middle; 
+background-color: #fdfdfd; 
+cursor: pointer; 
+border: 1px solid #ebebeb; 
+border-bottom-color: #e2e2e2; 
+border-radius: .25em; } 
+/* named upload */ 
+.filebox .upload-name { 
+display: inline-block; 
+padding: .5em .75em; 
+/* label의 패딩값과 일치 */ 
+font-size: inherit; 
+font-family: inherit; 
+line-height: normal; 
+vertical-align: middle; 
+background-color: #f5f5f5; 
+border: 1px solid #ebebeb; 
+border-bottom-color: #e2e2e2; 
+border-radius: .25em; 
+-webkit-appearance: none; 
+/* 네이티브 외형 감추기 */ 
+-moz-appearance: none; 
+appearance: none; }
+
+
+
+
+
+	</style>
+	<script>
+	function Back()
+{
+    window.history.back();
+}
+	</script>
+	<body>
+	
+	 <div class="container">
+       <div class="row">
+ 
+		<div class="col-md-3"></div>
+        <form action="" method="post" class="col-md-6">
+		       <p class="h2 text-center">Group</p>
+          <div class="preview text-center">
+                <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" width="200" height="200"/>
+                <div class="browse-button">
+                    <i class="fa fa-pencil-alt"></i>
+                 <div class="filebox"> 
+				 <input class="upload-name" value="파일선택" disabled="disabled"> 
+				 <label for="ex_filename">업로드</label> 
+				 <input type="file" id="ex_filename" class="upload-hidden"> 
+				 </div>
+
+                </div>
+                <span class="Error"></span>
+            </div>
+            <%
+            HttpSession session;
+			String aa =(String)session.getAttribute("friendlist");
+            if(aa.equals("reallynull")){
+            }	
+            else{	%>
+            
+          <div class="form-group">
+                <label>그룹이름:</label>
+                <input class="form-control" type="text" name="fullname" required placeholder="Enter Your Full Name"/>
+                <span class="Error"></span>
+            </div>
+            <div class="form-group">
+<a href="usermemberlist" class="btn btn-outline-success btn-xs pull-right"><b>+</b>멤버추가</a>
+					<div >
+				<table class="table table-striped custab">
+					<thead>
+					
+						<tr>
+	
+							<th>이름</th>
+							<th>ID</th>
+							<th class="text-center">Action</th>
+						</tr>
+					</thead>
+							<tr>
+	
+								<td>News</td>
+								<td>News Cate</td>
+								<td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+							</tr>
+							<tr>
+
+								<td>Products</td>
+								<td>Main Products</td>
+								<td class="text-center"> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+							</tr>
+							<tr>
+	
+								<td>Blogs</td>
+								<td>Parent Blogs</td>
+								<td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span>Del</a></td>
+							</tr>
+					</table>
+					</div>
+					
+
+            </div>      
+            <%} %>      
+            <div class="form-group">
+                <input class="btn btn-outline-success btn-block" type="submit" value="만들기"/>
+            </div>
+        </form>
+    </div>
+	</div>
+	  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+	</html>

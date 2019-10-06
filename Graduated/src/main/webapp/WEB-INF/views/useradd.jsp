@@ -42,17 +42,17 @@
                     </form>
                     <div>
                     <%
-                    String name=(String)session.getAttribute("searchname");
-                    String id=(String)session.getAttribute("searchid");
-                  System.out.println(name);
-                    if(name.equals("mmm")){
+                    String username=(String)session.getAttribute("searchname");
+                    String userid=(String)session.getAttribute("searchuser");
+                  System.out.println(username);
+                    if(username.equals("mmm")){
                     	
                     
                     %>
 					<h3> </h3>
 					<%}
                     else{
-                    System.out.println(name);%>
+                    System.out.println(username);%>
                    <h3> 	</h3>
                    <table class="table">
   <thead>
@@ -64,8 +64,8 @@
   </thead>
   <tbody>
    <tr  onClick = " location.href='usergroupadd'">
-      <td>${id}</td>
-      <td>${name}</td>
+      <td><%=userid %></td>
+      <td><%=username %></td>
     </tr>
   </tbody>
 </table>

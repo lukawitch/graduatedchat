@@ -16,12 +16,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chat.graduated.model.Countgroupaccept;
+import com.chat.graduated.model.GetGroupAccept;
 import com.chat.graduated.model.GetUserInfo;
 import com.chat.graduated.model.Grouplist;
 import com.chat.graduated.model.Join;
 import com.chat.graduated.model.ProfileEdit;
 import com.chat.graduated.model.SearchUser;
+import com.chat.graduated.model.SearchUserMember;
+import com.chat.graduated.model.StateEdit;
 import com.chat.graduated.model.User;
+import com.chat.graduated.vo.GetGroupMember;
 import com.chat.graduated.vo.Groupvo;
 import com.chat.graduated.vo.Uservo;
 
@@ -32,8 +37,8 @@ public class IndexController {
 
 	@RequestMapping(value = "loginProcess", method = RequestMethod.POST)
 	public String hello(@ModelAttribute Uservo vo, Model model, HttpSession session) {
-		System.out.println(vo.getId());
-		System.out.println(vo.getPw());
+		/*System.out.println(vo.getId());
+		System.out.println(vo.getPw());*/
 		User user = new User();
 		a = user.check(vo.getId(), vo.getPw());
 		if (a.equals("admin_NO")) {
@@ -43,16 +48,33 @@ public class IndexController {
 			Uservo userinfo = new Uservo();
 			GetUserInfo info = new GetUserInfo();
 			userinfo = info.check(vo.getId());
-			System.out.println(userinfo.getId());
+			//System.out.println(userinfo.getId());
 			session.setAttribute("id", userinfo.getId());
 			session.setAttribute("name", userinfo.getName());
 			session.setAttribute("email", userinfo.getEmail());
+			GetGroupAccept groupaccept = new GetGroupAccept();
+			ArrayList<GetGroupMember> group = groupaccept.check(userinfo.getId());
+			session.setAttribute("groupaccept", group);
 			res = "redirect:/main";
 		}
 		model.addAttribute("user", vo);
 
 		return res;
 	}
+	@RequestMapping(value = "/accept", method = RequestMethod.GET)
+	public String accept( HttpSession session,
+			@RequestParam(value = "state", required = true) String state) {
+		String id = (String)session.getAttribute("id");
+		if(state.equals("apply")) {
+			StateEdit edit = new StateEdit();
+			edit.update("apply",id);
+		}
+		
+		return "redirect:/main";
+
+	}
+
+	
 
 	private Uservo info() {
 		// TODO Auto-generated method stub
@@ -67,9 +89,9 @@ public class IndexController {
 			@RequestParam(value = "birth", required = true) int birth,
 			@RequestParam(value = "password_check", required = true) String password_check, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		System.out.println(userId);
+		/*System.out.println(userId);
 		System.out.println(password);
-		System.out.println(name);
+		System.out.println(name);*/
 		Join join = new Join();
 		int a;
 		if (password.equals(password_check)) {
@@ -110,10 +132,10 @@ public class IndexController {
 		return "chat";
 	} */
 	@RequestMapping(value = "/chat")
-	public String chat(@RequestParam(value = "pin", required = true) String pin, Model model) {
+	public String chat(@RequestParam(value = "gpin", required = true) String gpin, Model model) {
 		Grouplist gg = new Grouplist();
 		List<Groupvo> vo = new ArrayList<Groupvo>();
-		vo = gg.gmemberlist(pin);
+		vo = gg.gmemberlist(gpin);
 		model.addAttribute("GG", vo);
 		//System.out.println(vo.get);
 		//for(int i=0;i<vo.size();i++){System.out.println("controller에서 "+vo.get(i).getUserid());}
@@ -140,11 +162,47 @@ public class IndexController {
 
 	}
 
+//	session.setAttribute("searchid", user.getId());
+	@RequestMapping(value = "/search_member", method = RequestMethod.GET)
+	public String search_member(
+			@RequestParam(value = "idadd", required = true) String userId, Model model) {
+		SearchUser search = new SearchUser();
+		Uservo user = new Uservo();
+		user = search.makeGroupUserSearch(userId);
+		if(user.getId() ==null){
+			user = search.makeGroupUserSearch(userId); System.out.println(user.getName());
+		}else{System.out.println("없다.null~");
+		}
+		System.out.println("searchtest: "+user.getId());
+
+		//그룹
+		Grouplist gg = new Grouplist();
+		List<Groupvo> vo = new ArrayList<Groupvo>();
+		vo = gg.grouplist(user.getId());
+		model.addAttribute("GG", vo); //idadd
+
+
+		return "memberadd";
+	}
+
+	@RequestMapping(value = "/memberadd", method = RequestMethod.GET)
+	public void memberadd() {		
+	}
+	
+	@RequestMapping(value = "/select_friend", method = RequestMethod.GET)
+	public String select_friend () {
+		return "makegroup";
+	}
+	@RequestMapping(value = "/make_group", method = RequestMethod.GET)
+	public void make_group () {
+	}
+	
+	
 	@RequestMapping(value = "/mode", method = RequestMethod.GET)
 	public String mode(HttpSession session) {
 		String a = null;
 		if (session.getAttribute("mode") == null) {
-			System.out.println("ddd");
+			//System.out.println("ddd");
 			session.setAttribute("mode", "personal");
 			a = "redirect:/personal";
 		} else if (String.valueOf(session.getAttribute("mode")).equals("personal")) {
@@ -163,9 +221,76 @@ public class IndexController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/group", method = RequestMethod.GET)
-	public void group() {
+	@RequestMapping(value = "/makegroup", method = RequestMethod.GET)
+	public void group(HttpSession session) {
+		if (session.getAttribute("friendlist") == null) {
+			session.setAttribute("listcheck","reallynull");
+			//System.out.println("show");
+		}
+		else {
+			session.setAttribute("listcheck","reallylisthave");
+		}
 
+	}
+	@RequestMapping(value = "/getfriendlist", method = RequestMethod.POST)
+	public String getlist(@RequestParam(value = "check", required = true) String[] check,
+			HttpSession session) {
+
+		SearchUser usersearch = new SearchUser();
+		//System.out.println(a);
+		ArrayList<Uservo> list = new ArrayList<Uservo>();
+		 
+		for(int i=0;i<check.length;i++) {
+			//System.out.println(check[i]);
+			Uservo user= new Uservo();
+			user.setId(usersearch.check(check[i]).getId());
+			user.setName(usersearch.check(check[i]).getName());
+
+			list.add(user);
+			System.out.println(list.get(0).getName());
+			System.out.println(list.get(0).getId());
+
+		}
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(0).getName());
+			System.out.println(list.get(0).getId());
+		}
+		session.setAttribute("friendlist",list);
+		return "redirect:/makegroup";
+	}
+	@RequestMapping(value = "/tteesstt", method = RequestMethod.POST)
+	public String tt(HttpSession session,
+			@RequestParam(value = "groupname", required = true) String groupname) {
+		ArrayList<Uservo> list =(ArrayList<Uservo>)session.getAttribute("friendlist");
+		Countgroupaccept aaa = new Countgroupaccept();
+		String toid=(String)session.getAttribute("id");
+	
+		int a=aaa.numcheck();
+		System.out.println(a);
+		
+		for(int i=0;i<list.size();i++) {
+			a++;
+			aaa.insertcheck(a,toid,list.get(i).getId(),groupname);
+		}
+		session.removeAttribute("friendlist");
+		return "redirect:/worksuccess";
+	}
+	@RequestMapping(value = "/worksuccess", method = RequestMethod.GET)
+	public void success() {
+		
+	}
+	@RequestMapping(value = "/usermemberlist", method = RequestMethod.GET)
+	public void usermemberlist(HttpSession session) {
+		SearchUserMember search = new SearchUserMember();
+		String id=(String) session.getAttribute("id");
+		ArrayList<Uservo>list= new ArrayList<>();
+		list=search.check(id);
+		/*for (int i=0;i<list.size();i++) {
+			System.out.println(list.get(i).getId());
+			System.out.println(list.get(i).getName());
+			
+		}*/
+		session.setAttribute("list", list);
 	}
 
 	@RequestMapping(value = "/useradd", method = RequestMethod.GET)
@@ -180,8 +305,8 @@ public class IndexController {
 		SearchUser search = new SearchUser();
 		Uservo user = new Uservo();
 		user = search.check(userId);
-		System.out.println(user.getId());
-		System.out.println(user.getName());
+		/*System.out.println(user.getId());
+		System.out.println(user.getName());*/
 		session.setAttribute("searchname",user.getName());
 		session.setAttribute("searchuser",user.getId());
 		return "redirect:/useradd";
@@ -220,8 +345,8 @@ public class IndexController {
 			@RequestParam(value = "passwordchk", required = true) String userpasswordchk,
 			@RequestParam(value = "id", required = true) String id, HttpServletRequest request,
 			HttpServletResponse response, HttpSession session) throws IOException {
-		System.out.println(username);
-		System.out.println(useremail);
+		/*System.out.println(username);
+		System.out.println(useremail);*/
 		String a = "redirect:/test";
 		if (!userpassword.equals(userpasswordchk)) {
 			response.setContentType("text/html; charset=UTF-8");
@@ -237,7 +362,7 @@ public class IndexController {
 			Uservo userinfo = new Uservo();
 			GetUserInfo info = new GetUserInfo();
 			userinfo = info.check(id);
-			System.out.println(userinfo.getId());
+			//System.out.println(userinfo.getId());
 			session.setAttribute("id", userinfo.getId());
 			session.setAttribute("name", userinfo.getName());
 			session.setAttribute("email", userinfo.getEmail());
@@ -252,5 +377,6 @@ public class IndexController {
 	public String main() {
 		return "success";
 	}
+
 
 }

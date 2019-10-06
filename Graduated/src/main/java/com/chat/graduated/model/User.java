@@ -23,7 +23,7 @@ public class User {
 		JDBCUtil aa= new JDBCUtil();
 		try {
 			con=aa.testConnection();
-			System.out.println(con);
+			//System.out.println(con);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
