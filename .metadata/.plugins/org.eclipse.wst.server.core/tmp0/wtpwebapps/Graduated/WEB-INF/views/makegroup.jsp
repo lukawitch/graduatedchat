@@ -96,7 +96,7 @@ $(document).on('click', '#btnSearch', function(e){
 
 			<div class="col-md-3"></div>
 
-			<form action="make_group" method="get" class="col-md-6">
+			<form action="tteesstt" method="post" class="col-md-6">
 
 				<p class="h2 text-center">Group</p>
 				<div class="preview text-center">
@@ -134,31 +134,30 @@ $(document).on('click', '#btnSearch', function(e){
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
+							<%
+					ArrayList<Uservo> list=(ArrayList<Uservo>)session.getAttribute("friendlist");
+                 	String listcheck=(String)session.getAttribute("listcheck");
+                    if(listcheck.equals("reallynull")){
+                    	
+                    
+                    %>
+					<h3> </h3>
+					<%} else{
+						for(int i=0;i<list.size();i++){
+							%>
 							<tr>
-
-								<td>test <%=searchid%></td>
-								<td>News Cate</td>
-								<td class="text-center"><a href="#"
-									class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span> Del</a></td>
+							<td><%=list.get(i).getId() %></td>
+							<td><%=list.get(i).getName() %></td>
+							<td class="text-center"><a href="#"
+								class="btn btn-danger btn-xs"><span
+								class="glyphicon glyphicon-remove"></span> Del</a></td>
 							</tr>
-							<tr>
-
-								<td>Products</td>
-								<td>Main Products</td>
-								<td class="text-center"><a href="#"
-									class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span> Del</a></td>
-							</tr>
-							<tr>
-	
-
-								<td>Blogs</td>
-								<td>Parent Blogs</td>
-								<td class="text-center"><a href="#"
-									class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span>Del</a></td>
-							</tr>
+							<% }%>
+						
+							
+							<%} %>
+							
+							
 					</table>
 
 					</div>

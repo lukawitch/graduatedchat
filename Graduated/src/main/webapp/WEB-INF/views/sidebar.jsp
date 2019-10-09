@@ -125,14 +125,16 @@
 		            }	
 		            else{
 					for(int i=0;i<list.size();i++){
+						if(list.get(i).getState().equals("apply")){}
+						else{
 					%>
             <tr>
                
                 <td><%=list.get(i).getTouser() %></td>
                 <td><%=list.get(i).getGroupname() %></td>
-                <td class="text-center"><a class='btn btn-info btn-xs' href="accept?state=apply"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="accept?state=apply&group=<%=list.get(i).getGroupname() %>"><span class="glyphicon glyphicon-edit"></span>apply</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
             </tr>
-            <%}} %>
+            <%}}} %>
            
     </table>
     </div>

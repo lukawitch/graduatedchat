@@ -16,9 +16,9 @@ public class StateEdit {
 	String sql=null;
 	int c;
 	Connection con=null;
-	public void update(String apply,String id ) {
+	public void update(String apply,String id,String groupname ) {
 	JDBCUtil aa= new JDBCUtil();
-	sql="update groupaccept set state=? where fromuser=?";
+	sql="update groupaccept set state=? where fromuser=? and groupname=?";
 
 	try {
 	
@@ -30,7 +30,7 @@ public class StateEdit {
 		ps=con.prepareStatement(sql);
 		ps.setString(1,apply);
 		ps.setString(2,id);
-		
+		ps.setString(3,groupname);
 		ps.executeUpdate();
 		//System.out.println("데이터입력완료");
 	

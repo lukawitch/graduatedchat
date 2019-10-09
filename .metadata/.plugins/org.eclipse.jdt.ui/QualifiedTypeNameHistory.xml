@@ -27,4 +27,6 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="com.chat.graduated.model.StateEdit"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.chat.graduated.model.Grouplist"/>
 </qualifiedTypeNameHistroy>

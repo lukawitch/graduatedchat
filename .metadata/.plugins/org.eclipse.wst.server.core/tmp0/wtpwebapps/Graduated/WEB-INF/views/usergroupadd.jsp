@@ -1,3 +1,5 @@
+<%@page import="com.chat.graduated.vo.Groupvo"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c"  uri="http://java.sun.com/jstl/core"%>
@@ -24,8 +26,27 @@
                        
 					   <div class="row">
                                 <div class="col-md-6">
-                                    <select class="form-control">
+                                <form action="centerchk" method="get">
+                                    <select class="form-control" name="check">
 										  <option>Default select</option>
+										   <%
+					List<Groupvo> grouplist=(List<Groupvo>)session.getAttribute("grouplist");
+                    if(grouplist==null){
+                    	
+                    
+                    %>
+					
+					<%}
+                    else{
+                    	for(int i=0;i<grouplist.size();i++){
+                    		
+                    	
+                    
+                    %>
+                    <option value=<%=grouplist.get(i).getName() %>><%=grouplist.get(i).getName() %></option>
+                    <%
+                    	}}
+                    %>
 										</select>
                                 </div>
                             
@@ -35,9 +56,7 @@
                            
 
                             <div class="col-md-6">
-                                <button type="submit" class="btn btn-primary">
-                                   add
-                                </button>
+                             <input type="submit"  class="btn btn-primary"/>
                                </div> 
                             </div>
                     </div>

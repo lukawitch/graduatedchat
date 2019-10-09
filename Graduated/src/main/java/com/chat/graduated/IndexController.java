@@ -63,11 +63,12 @@ public class IndexController {
 	}
 	@RequestMapping(value = "/accept", method = RequestMethod.GET)
 	public String accept( HttpSession session,
-			@RequestParam(value = "state", required = true) String state) {
+			@RequestParam(value = "state", required = true) String state,
+			@RequestParam(value = "group", required = true) String group) {
 		String id = (String)session.getAttribute("id");
 		if(state.equals("apply")) {
 			StateEdit edit = new StateEdit();
-			edit.update("apply",id);
+			edit.update("apply",id,group);
 		}
 		
 		return "redirect:/main";
@@ -163,31 +164,30 @@ public class IndexController {
 	}
 
 //	session.setAttribute("searchid", user.getId());
-	@RequestMapping(value = "/search_member", method = RequestMethod.GET)
+	@RequestMapping(value = "/search_member", method = RequestMethod.POST)
 	public String search_member(
-			@RequestParam(value = "idadd", required = true) String userId, Model model) {
+			@RequestParam(value = "id", required = true) String userId,HttpSession session) {
 		SearchUser search = new SearchUser();
 		Uservo user = new Uservo();
-		user = search.makeGroupUserSearch(userId);
-		if(user.getId() ==null){
-			user = search.makeGroupUserSearch(userId); System.out.println(user.getName());
-		}else{System.out.println("없다.null~");
-		}
-		System.out.println("searchtest: "+user.getId());
+		user = search.check(userId);
+		/*System.out.println(user.getId());
+		System.out.println(user.getName());*/
+		session.setAttribute("searchname",user.getName());
+		session.setAttribute("searchuser",user.getId());
 
-		//그룹
-		Grouplist gg = new Grouplist();
-		List<Groupvo> vo = new ArrayList<Groupvo>();
-		vo = gg.grouplist(user.getId());
-		model.addAttribute("GG", vo); //idadd
 
 
 		return "memberadd";
 	}
 
 	@RequestMapping(value = "/memberadd", method = RequestMethod.GET)
-	public void memberadd() {		
+	public void memberadd(HttpSession session) {		
+		if (session.getAttribute("searchname") ==null ) {
+			session.setAttribute("searchname", "mmm");
+		}
+
 	}
+	
 	
 	@RequestMapping(value = "/select_friend", method = RequestMethod.GET)
 	public String select_friend () {
@@ -232,29 +232,28 @@ public class IndexController {
 		}
 
 	}
-	@RequestMapping(value = "/getfriendlist", method = RequestMethod.POST)
-	public String getlist(@RequestParam(value = "check", required = true) String[] check,
-			HttpSession session) {
+	@RequestMapping(value = "/getfriendlist", method = RequestMethod.GET)
+	public String getlist(HttpSession session) {
 
 		SearchUser usersearch = new SearchUser();
 		//System.out.println(a);
-		ArrayList<Uservo> list = new ArrayList<Uservo>();
-		 
-		for(int i=0;i<check.length;i++) {
-			//System.out.println(check[i]);
-			Uservo user= new Uservo();
-			user.setId(usersearch.check(check[i]).getId());
-			user.setName(usersearch.check(check[i]).getName());
+		ArrayList<Uservo> list;
+		if(session.getAttribute("friendlist")==null) {
+			list=new ArrayList<Uservo>();
+		}
+		else {
+			list=(ArrayList<Uservo>)session.getAttribute("friendlist");
+		}
+		Uservo user = new Uservo();
+		String id= (String)session.getAttribute("searchuser");
+		String name = (String)session.getAttribute("searchname");
+		user.setId(id);
+		user.setName(name);
 
 			list.add(user);
-			System.out.println(list.get(0).getName());
-			System.out.println(list.get(0).getId());
-
-		}
-		for(int i=0;i<list.size();i++) {
-			System.out.println(list.get(0).getName());
-			System.out.println(list.get(0).getId());
-		}
+			session.removeAttribute("searchid");
+            session.removeAttribute("searchname");
+            	
 		session.setAttribute("friendlist",list);
 		return "redirect:/makegroup";
 	}
@@ -274,6 +273,7 @@ public class IndexController {
 		}
 		session.removeAttribute("friendlist");
 		return "redirect:/worksuccess";
+		
 	}
 	@RequestMapping(value = "/worksuccess", method = RequestMethod.GET)
 	public void success() {
@@ -370,13 +370,37 @@ public class IndexController {
 		return a;
 	}
 	@RequestMapping(value="/usergroupadd",method= RequestMethod.GET)
-	public void usergrupadd() {
+	public void usergrupadd( HttpSession session) {
+		
+		List<Groupvo> grouplist =new ArrayList<Groupvo>();
+		Grouplist group=new Grouplist();
+		String id = (String)session.getAttribute("id");
+		grouplist=group.grouplist(id);
+		for(int i=0;i<grouplist.size();i++) {
+			System.out.println(grouplist.get(i).getName());
+		}
+		
+		session.setAttribute("grouplist", grouplist);
 
 	}
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main() {
 		return "success";
 	}
-
+	
+	
+	@RequestMapping(value = "/centerchk", method = RequestMethod.GET)
+	public String centerchk(HttpSession session,
+			@RequestParam(value = "check", required = true) String groupname) {
+		System.out.println(groupname);
+		Countgroupaccept aaa = new Countgroupaccept();
+		String toid=(String)session.getAttribute("id");
+		int a=aaa.numcheck();
+		String fromid=(String)session.getAttribute("searchuser");
+		aaa.insertcheck(a,toid,fromid,groupname);
+;
+		return "redirect:/worksuccess";
+	}
+	
 
 }
