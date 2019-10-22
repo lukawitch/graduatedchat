@@ -18,8 +18,11 @@ public class Grouplist {
 	ResultSet rs =null;
 	String sql=null;
 	Connection con=null;
+<<<<<<< HEAD
 	
 	//±×·ì ÀÔ·Â
+=======
+>>>>>>> master
 	int a;
 	public int input(String userid, String name) throws Exception{
 		//Groupvo group=new Groupvo();
@@ -32,7 +35,11 @@ public class Grouplist {
 			ps.setString(1,userid);
 			ps.setString(2,name);
 			ps.executeUpdate();
+<<<<<<< HEAD
 			System.out.println("µ¥ÀÌÅÍÀÔ·Â¿Ï·á");
+=======
+			System.out.println("ë°ì´í„°ìž…ë ¥ì™„ë£Œ");
+>>>>>>> master
 			a=1;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -91,7 +98,7 @@ public class Grouplist {
 		sql="select * from grouplist where gpin=?";
 		try {
 			con=aa.testConnection();
-			System.out.println(con);
+			//System.out.println(con);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -106,8 +113,8 @@ public class Grouplist {
 				vo.setUserid(rs.getString("userid"));
 				vo.setName(rs.getString("name"));
 				glist.add(vo);
-				//System.out.println("grouplist.java¿¡¼­ "+vo.getUserid());
-				//System.out.println("grouplis.java¿¡¼­ ¸®½ºÆ® Ãâ·Â"+glist.get(0).getUserid());
+				//System.out.println("grouplist.javaï¿½ï¿½ï¿½ï¿½ "+vo.getUserid());
+				//System.out.println("grouplis.javaï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½"+glist.get(0).getUserid());
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

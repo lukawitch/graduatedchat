@@ -9,6 +9,10 @@ import java.sql.Statement;
 import com.chat.graduated.dao.JDBCUtil;
 
 public class Join {
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 	PreparedStatement ps =null;
 	Statement sta =null;
 	ResultSet rs =null;
@@ -21,7 +25,7 @@ public class Join {
 
 	try {
 		con=aa.testConnection();
-		System.out.println(name);
+		//System.out.println(name);
 		ps=con.prepareStatement(sql);
 		ps.setString(1,id);
 		ps.setString(2,password);
@@ -29,7 +33,7 @@ public class Join {
 		ps.setString(4,name);
 		ps.setInt(5,birth);
 		ps.executeUpdate();
-		System.out.println("µ¥ÀÌÅÍÀÔ·Â¿Ï·á");
+		//System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô·Â¿Ï·ï¿½");
 		c=0;
 	}catch (Exception e) {
 		c=1;

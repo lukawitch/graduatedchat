@@ -22,7 +22,14 @@ public class Connectvo {
 	public void setGpin(int gpin) {
 		this.gpin = gpin;
 	}
+<<<<<<< HEAD
 	
 	
 	
 }
+=======
+
+
+
+}
+>>>>>>> master

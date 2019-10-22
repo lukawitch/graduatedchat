@@ -1,3 +1,5 @@
+<%@page import="com.chat.graduated.vo.GetGroupMember"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -34,12 +36,12 @@
                     <span class="label label-success bg-success">10</span>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <ul class="dropdown-menu-over list-unstyled">
+                   <!--<ul class="dropdown-menu-over list-unstyled">
                       <li class="header-ul text-center">You have 4 messages</li>
                       <li>
-                        <!-- inner menu: contains the actual data -->
+                     
                         <ul class="menu list-unstyled">
-                          <li><!-- start message -->
+                          <li>
                           <a href="#">
                             <div class="pull-left">
                               <img src="http://via.placeholder.com/160x160" class="rounded-circle  " alt="User Image">
@@ -51,7 +53,7 @@
                             <p>Why not buy a new awesome theme?</p>
                           </a>
                         </li>
-                        <!-- end message -->
+                        
                         <li>
                           <a href="#">
                             <div class="pull-left">
@@ -103,7 +105,40 @@
                       </ul>
                     </li>
                     <li class="footer-ul text-center"><a href="#">See All Messages</a></li>
-                  </ul>
+                  </ul> --> 
+                  <div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+           
+            <th>Touser</th>
+            <th>Group</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <%
+					ArrayList<GetGroupMember> list= new ArrayList<GetGroupMember>(); 
+					list = (ArrayList<GetGroupMember>)session.getAttribute("groupaccept");
+					
+		            if(list.isEmpty()){
+		            }	
+		            else{
+					for(int i=0;i<list.size();i++){
+						if(list.get(i).getState().equals("apply")){}
+						else{
+					%>
+            <tr>
+               
+                <td><%=list.get(i).getTouser() %></td>
+                <td><%=list.get(i).getGroupname() %></td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="accept?state=apply&group=<%=list.get(i).getGroupname() %>"><span class="glyphicon glyphicon-edit"></span>apply</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+            </tr>
+            <%}}} %>
+           
+    </table>
+    </div>
+</div>
                 </div>
               </li>
               <li class="nav-item dropdown notifications-menu">
@@ -175,10 +210,10 @@
             <li> <a href="mode" class="collapsed active" > <i class="fa fa-users fa-3x"></i> <span class="nav-label">Change</span> </a></li>
          
               
-            <li> <a href="group"><i class="fa fa-plus fa-3x"></i> <span class="nav-label">GAdd</span></a> </li>
+            <li> <a href="makegroup"><i class="fa fa-plus fa-3x"></i> <span class="nav-label">GAdd</span></a> </li>
             <li> <a href="useradd" class="collapsed active" > <i class="fa fa-user-plus fa-3x"></i> <span class="nav-label">UAdd</span>  </a></li>
           <li> <a href="#"><i class="fa fa-user-times fa-3x"></i> <span class="nav-label">Delete</span></a> </li>
-          <li> <a href="logout" class="collapsed active" ><i class="fa fa-sign-out fa-3x"></i> <span class="nav-label">Signout</span></a></li>
+          <li> <a href="index" class="collapsed active" ><i class="fa fa-sign-out fa-3x"></i> <span class="nav-label">Signout</span></a></li>
        
         
   

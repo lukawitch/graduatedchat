@@ -24,10 +24,10 @@ public class ProfileEdit {
 	try {
 	
 		con=aa.testConnection();
-		System.out.println(name);
+		/*System.out.println(name);
 		System.out.println(email);
 		System.out.println(password);
-		System.out.println(id);
+		System.out.println(id);*/
 		ps=con.prepareStatement(sql);
 		ps.setString(1,name);
 		ps.setString(2,email);
@@ -35,7 +35,7 @@ public class ProfileEdit {
 		ps.setString(4,id);
 		
 		ps.executeUpdate();
-		System.out.println("데이터입력완료");
+		//System.out.println("데이터입력완료");
 	
 	}catch (Exception e) {
 		

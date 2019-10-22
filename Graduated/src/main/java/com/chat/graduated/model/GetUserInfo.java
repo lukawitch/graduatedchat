@@ -22,7 +22,7 @@ public class GetUserInfo {
 		JDBCUtil aa= new JDBCUtil();
 		try {
 			con=aa.testConnection();
-			System.out.println(con);
+			//System.out.println(con);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -32,7 +32,7 @@ public class GetUserInfo {
 			rs=ps.executeQuery();
 			while(rs.next()){
 			user.setId(rs.getString(1));
-			System.out.println(user.getId());
+			//System.out.println(user.getId());
 			user.setEmail(rs.getString(3));
 			user.setName(rs.getString(4));
 			}

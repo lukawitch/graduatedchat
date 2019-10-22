@@ -9,6 +9,7 @@ import java.sql.Statement;
 import com.chat.graduated.dao.JDBCUtil;
 import com.chat.graduated.vo.Groupvo;
 import com.chat.graduated.vo.Uservo;
+import com.chat.graduated.vo.Groupvo;
 
 public class SearchUser {
 	Uservo t=new Uservo();
@@ -23,7 +24,7 @@ public class SearchUser {
 		JDBCUtil aa= new JDBCUtil();
 		try {
 			con=aa.testConnection();
-			System.out.println(con);
+			//System.out.println(con);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,8 +50,12 @@ public class SearchUser {
 		}
 		return t;
 	}
+<<<<<<< HEAD
 	
 	public Uservo makeGroupUserSearch(String search){ //°Ë»öÇÏ¸é ÀÌ¸§/¾ÆÀÌµð Ãâ·Â 
+=======
+	public Uservo makeGroupUserSearch(String search){ //ê²€ìƒ‰í•˜ë©´ ì´ë¦„/ì•„ì´ë”” ì¶œë ¥ 
+>>>>>>> master
 		Uservo vo = new Uservo();
 		sql="select * from user where id='"+search+"' or name='"+search+"'";
 		JDBCUtil aa= new JDBCUtil();
@@ -80,10 +85,16 @@ public class SearchUser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+<<<<<<< HEAD
 		
 		return vo;
 	}
 
 	
+=======
+
+		return vo;
+	}
+>>>>>>> master
 }
 
