@@ -1,11 +1,6 @@
 <%@page import="com.chat.graduated.vo.Uservo"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-<<<<<<< HEAD
-	pageEncoding="UTF-8"%>
-=======
- 	pageEncoding="UTF-8"%>
->>>>>>> master
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String searchid = (String) session.getAttribute("searchid");
@@ -16,11 +11,7 @@
 <head>
 <meta charset="UTF-8">
 
-<<<<<<< HEAD
-<meta name="viewport"
-=======
     <meta name="viewport"
->>>>>>> master
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Bootstrap CSS -->
@@ -39,10 +30,6 @@
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 .filebox label {
 	display: inline-block;
 	padding: .5em .75em;
@@ -56,11 +43,6 @@
 	border-bottom-color: #e2e2e2;
 	border-radius: .25em;
 }
-<<<<<<< HEAD
-/* named upload */
-=======
-
->>>>>>> master
 .filebox .upload-name {
 	display: inline-block;
 	padding: .5em .75em;
@@ -78,15 +60,10 @@
 	-moz-appearance: none;
 	appearance: none;
 }
-<<<<<<< HEAD
-</style>
-<script>
-=======
 
 
 	</style>
 	<script>
->>>>>>> master
 	function Back() {
 		window.history.back();
 	}
@@ -98,14 +75,8 @@ $(document).on('click', '#btnSearch', function(e){
 	location.href = url;
 	console.log(url);
 });	
-<<<<<<< HEAD
-
 </script>
 <body>
-=======
-</script>
-	<body>
->>>>>>> master
 	<!-- search{s} -->
 	<div class="form-group row justify-content-center">
 		<div class="w300" style="padding-right: 10px">
@@ -118,87 +89,11 @@ $(document).on('click', '#btnSearch', function(e){
 		</div>
 	</div>
 	<!-- search{e} -->
-<<<<<<< HEAD
-	
-	
-	
-	
-=======
->>>>>>> master
 	<div class="container">
 		<div class="row">
 
 			<div class="col-md-3"></div>
-<<<<<<< HEAD
 
-			<form action="make_group" method="get" class="col-md-6">
-
-				<p class="h2 text-center">Group</p>
-				<div class="preview text-center">
-					<img class="preview-img"
-						src="http://simpleicon.com/wp-content/uploads/account.png"
-						alt="Preview Image" width="200" height="200" />
-					<div class="browse-button">
-						<i class="fa fa-pencil-alt"></i>
-						<div class="filebox">
-							<input class="upload-name" value="파일선택" disabled="disabled">
-							<label for="ex_filename">업로드</label> <input type="file"
-								id="ex_filename" class="upload-hidden">
-						</div>
-
-					</div>
-					<span class="Error"></span>
-				</div>
-				<div class="form-group">
-					<label>그룹이름:</label> <input class="form-control" name="groupname"
-						type="text" required placeholder="Enter Your Full Name" /> <span
-						class="Error"></span>
-				</div>
-				<div class="form-group">
-					<a href="memberadd"
-						class="btn btn-outline-success btn-xs pull-right"><b>+</b>멤버추가</a>
-
-					<div>
-						<table class="table table-striped custab">
-							<thead>
-
-								<tr>
-
-									<th>이름</th>
-									<th>ID</th>
-									<th class="text-center">Action</th>
-								</tr>
-							</thead>
-							<tr>
-
-								<td>test <%=searchid%></td>
-								<td>News Cate</td>
-								<td class="text-center"><a href="#"
-									class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span> Del</a></td>
-
-							</tr>
-							<tr>
-
-								<td>Products</td>
-								<td>Main Products</td>
-								<td class="text-center"><a href="#"
-									class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span> Del</a></td>
-							</tr>
-							<tr>
-
-								<td>Blogs</td>
-								<td>Parent Blogs</td>
-								<td class="text-center"><a href="#"
-									class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span>Del</a></td>
-							</tr>
-						</table>
-					</div>
-
-
-=======
 
 			<form action="tteesstt" method="post" class="col-md-6">
 
@@ -265,7 +160,6 @@ $(document).on('click', '#btnSearch', function(e){
 					</table>
 
 					</div>
->>>>>>> master
 				</div>
 				<div class="form-group">
 					<input class="btn btn-outline-success btn-block" type="submit"
@@ -274,10 +168,6 @@ $(document).on('click', '#btnSearch', function(e){
 			</form>
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -292,8 +182,4 @@ $(document).on('click', '#btnSearch', function(e){
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html> 
->>>>>>> master

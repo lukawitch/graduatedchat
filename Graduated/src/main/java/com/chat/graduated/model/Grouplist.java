@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.chat.graduated.dao.JDBCUtil;
+import com.chat.graduated.vo.GetGroupMember;
 import com.chat.graduated.vo.Groupvo;
 import com.chat.graduated.vo.Uservo;
 
@@ -18,11 +19,7 @@ public class Grouplist {
 	ResultSet rs =null;
 	String sql=null;
 	Connection con=null;
-<<<<<<< HEAD
-	
-	//±×·ì ÀÔ·Â
-=======
->>>>>>> master
+
 	int a;
 	public int input(String userid, String name) throws Exception{
 		//Groupvo group=new Groupvo();
@@ -35,11 +32,8 @@ public class Grouplist {
 			ps.setString(1,userid);
 			ps.setString(2,name);
 			ps.executeUpdate();
-<<<<<<< HEAD
-			System.out.println("µ¥ÀÌÅÍÀÔ·Â¿Ï·á");
-=======
+
 			System.out.println("ë°ì´í„°ìž…ë ¥ì™„ë£Œ");
->>>>>>> master
 			a=1;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -92,10 +86,10 @@ public class Grouplist {
 		return group;
 	}
 */
-	public List<Groupvo> gmemberlist(String gpin){
-		List<Groupvo> glist=new ArrayList<Groupvo>();
+	public ArrayList<GetGroupMember> gmemberlist(String groupname){
+		ArrayList<GetGroupMember> list = new ArrayList<>();
 		JDBCUtil aa= new JDBCUtil();
-		sql="select * from grouplist where gpin=?";
+		sql="select * from groupaccept where groupname=?";
 		try {
 			con=aa.testConnection();
 			//System.out.println(con);
@@ -105,17 +99,17 @@ public class Grouplist {
 		}
 		try {
 			ps=con.prepareStatement(sql);
-			ps.setString(1, gpin);
+			ps.setString(1, groupname);
 			rs=ps.executeQuery();
-			while(rs.next()){
-				Groupvo vo = new Groupvo();
-				vo.setGpin(rs.getInt("gpin"));
-				vo.setUserid(rs.getString("userid"));
-				vo.setName(rs.getString("name"));
-				glist.add(vo);
-				//System.out.println("grouplist.javaï¿½ï¿½ï¿½ï¿½ "+vo.getUserid());
-				//System.out.println("grouplis.javaï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½"+glist.get(0).getUserid());
-			}
+			while(rs.next()){				
+				GetGroupMember t=new GetGroupMember();
+				t.setTouser(rs.getString(1));
+				t.setFromuser(rs.getString(2));  
+				t.setGroupname(rs.getString(3));
+				t.setState(rs.getString(4));
+				list.add(t);
+			
+				}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -129,35 +123,33 @@ public class Grouplist {
 			e.printStackTrace();
 		}
 		
-		return glist;
+		return list;
 	}
 	
 	
 	public List<Groupvo> grouplist( String userid){
 		List<Groupvo> glist=new ArrayList<Groupvo>();
+		System.out.println("grouplist :  "+ userid);
+		
+		sql="select * from grouplist";// where userid='"+userid+"'";
 		JDBCUtil aa= new JDBCUtil();
-		sql="select * from grouplist where userid=?";
 		try {
 			con=aa.testConnection();
-			System.out.println(con);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			ps=con.prepareStatement(sql);
-			ps.setString(1, userid);
 			rs=ps.executeQuery();
-			
 			while(rs.next()){
 				Groupvo vo = new Groupvo();
 				vo.setGpin(rs.getInt("gpin"));
 				vo.setUserid(rs.getString("userid"));
 				vo.setName(rs.getString("name"));
+				vo.setName(rs.getString("pin"));
 				glist.add(vo);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
@@ -165,7 +157,6 @@ public class Grouplist {
 			ps.close();
 			rs.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return glist;

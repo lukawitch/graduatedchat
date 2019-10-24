@@ -21,18 +21,7 @@
 	crossorigin="anonymous">
 <style>
 </style>
-<%
-	String userid = (String) session.getAttribute("id"); //세션에서 아이디얻어옴
-	//if(userid==null){System.out.println("세션 ㄴㄴ");}
-	//else{System.out.println("세션 =="+ userid);}
 
-	Groupvo gvo = new Groupvo();
-	Grouplist model = new Grouplist();
-	//Groupvo sample = model.groupex(userid);
-
-	//System.out.println(sample.getName());
-	List<Groupvo> glist = model.grouplist(userid);
-%>
 
 
 <script>
@@ -60,16 +49,14 @@
 </script>
 </head>
 <body>
-	<%@include file="./sidebar.jsp"%>
+	<%@include file="sidebar.jsp"%>
 	<div class="container">
 		<div class="row">
 			<div class="col-2"></div>
 			<div class="col-10">
 				<table class="table table-filter">
 					<tbody>
-						<%
-							for (Groupvo vo : glist) {
-						%>
+						
 						<tr>
 							<td>
 								<div name="chk" class="ckbox">
@@ -81,25 +68,25 @@
 									src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg"
 									class="media-photo">
 							</a></td>
-							<td><a href="chat?gpin=<%=vo.getGpin()%>">
+							<c:forEach var="item" items="${glist }">
+							<td> <a href="chat?groupname= ${item.groupname }"> 
 									<div class="media">
 
 										<div class="media-body">
 											<span class="media-meta pull-right">Febrero 13, 2016</span>
 											<h4 class="title">
-
-												<%=vo.getGpin()%> :	<%=vo.getName()%>
+											
+				data : ${item.groupname }
+			
 												<span class="pull-right pagado">(new)</span>
 											</h4>
 											<p class="summary">Recent Messages...</p>
 										</div>
 									</div>
 							</a></td>
+									</c:forEach>
 						</tr>
 
-						<%
-							}
-						%>
 
 					</tbody>
 				</table>

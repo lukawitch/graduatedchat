@@ -9,10 +9,6 @@ import java.sql.Statement;
 import com.chat.graduated.dao.JDBCUtil;
 
 public class Join {
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 	PreparedStatement ps =null;
 	Statement sta =null;
 	ResultSet rs =null;

@@ -4,12 +4,7 @@ public class Groupvo {
 	int gpin;
 	String userid;
 	String name;
-<<<<<<< HEAD
-
-	
-=======
 	String pin;
->>>>>>> master
 	public int getGpin() {
 		return gpin;
 	}
@@ -28,4 +23,12 @@ public class Groupvo {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getPin() {
+		return pin;
+	}
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+	
+	
 }

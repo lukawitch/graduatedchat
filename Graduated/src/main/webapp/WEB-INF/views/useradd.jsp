@@ -1,10 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-<<<<<<< HEAD
-	pageEncoding="UTF-8"%>
-=======
-    pageEncoding="UTF-8"%>
-    <%@taglib prefix="c"  uri="http://java.sun.com/jstl/core"%>
->>>>>>> master
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c"  uri="http://java.sun.com/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,12 +40,6 @@
 						</form>
 					</div>
 
-<<<<<<< HEAD
-				</div>
-			</div>
-		</div>
-	</div>
-=======
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                    add
@@ -99,7 +88,6 @@
         </div>
     </div>
     </div>
->>>>>>> master
 
 	</main>
 </body>

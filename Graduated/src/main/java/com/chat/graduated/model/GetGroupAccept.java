@@ -24,9 +24,7 @@ public class GetGroupAccept {
 		JDBCUtil aa= new JDBCUtil();
 		try {
 			con=aa.testConnection();
-			//System.out.println(con);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
@@ -39,12 +37,8 @@ public class GetGroupAccept {
 				t.setGroupname(rs.getString(3));
 				t.setState(rs.getString(4));
 				list.add(t);
-				/*System.out.println(t.getId());
-				System.out.println(t.getName());*/
-				
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
@@ -52,7 +46,6 @@ public class GetGroupAccept {
 			ps.close();
 			rs.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return list;

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.chat.graduated.model.Countgroupaccept;
 import com.chat.graduated.model.GetGroupAccept;
@@ -54,13 +55,38 @@ public class IndexController {
 			session.setAttribute("email", userinfo.getEmail());
 			GetGroupAccept groupaccept = new GetGroupAccept();
 			ArrayList<GetGroupMember> group = groupaccept.check(userinfo.getId());
+			
 			session.setAttribute("groupaccept", group);
+			System.out.println("controller - group 첫번째 이름"+group.get(0).getGroupname());
+			
+			
 			res = "redirect:/main";
 		}
 		model.addAttribute("user", vo);
 
 		return res;
 	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/main")
+	public ModelAndView main(HttpSession session, ModelAndView mav) {
+		String userid = (String) session.getAttribute("id");
+		System.out.println("/main : " + userid);
+		
+/*		Grouplist model = new Grouplist();
+		List<Groupvo> glist = model.grouplist(userid);
+		for(int i=0;i<glist.size();i++) {
+//			System.out.println("/success - controller : "+glist.get(i).getName());
+		}*/
+		ArrayList<GetGroupMember> list = new ArrayList<GetGroupMember>();
+		list = (ArrayList<GetGroupMember>) session.getAttribute("groupaccept");
+
+		mav.setViewName("/success"); // 뷰의 이름
+		mav.addObject("glist", list);
+		
+		return mav;
+	}
+	
 	@RequestMapping(value = "/accept", method = RequestMethod.GET)
 	public String accept( HttpSession session,
 			@RequestParam(value = "state", required = true) String state,
@@ -113,63 +139,21 @@ public class IndexController {
 
 		return "joinsuccess";
 	}
-
-	/*
-	 * @RequestMapping(value="/profile",method= RequestMethod.GET) public String
-	 * profile(@ModelAttribute Uservo vo,Model model ,HttpServletRequest request
-	 * , HttpServletResponse response ,HttpSession session) { Profile profile =
-	 * new Profile(); String id = (String)session.getAttribute("id");
-	 * vo=profile.select(id); session.setAttribute("user",vo);
-	 * System.out.println(vo.getEmail()); return "profile"; }
-
-
-	@RequestMapping(value = "/chat", method = RequestMethod.GET)
-	public String chat(@RequestParam(value = "pin", required = true) String pin, Model model) {
-		Grouplist gg = new Grouplist();
-		List<Groupvo> vo = new ArrayList<Groupvo>();
-		vo = gg.gmemberlist(pin);
-		model.addAttribute("GG", vo);
-		//System.out.println(vo.get);
-		return "chat";
-	} */
-	
 	@RequestMapping(value = "/chat")
-	public String chat(@RequestParam(value = "gpin", required = true) String gpin, Model model) {
+	public String chat(@RequestParam(value = "groupname", required = true) String groupname, Model model) {
 		Grouplist gg = new Grouplist();
-		List<Groupvo> vo = new ArrayList<Groupvo>();
-		vo = gg.gmemberlist(gpin);
+		ArrayList<GetGroupMember> vo = new ArrayList<>();
+		vo = gg.gmemberlist(groupname);
 		model.addAttribute("GG", vo);
-		//System.out.println(vo.get);
-		//for(int i=0;i<vo.size();i++){System.out.println("controller에서 "+vo.get(i).getUserid());}
 		return "chat";
-<<<<<<< HEAD
-	} 
-	
-=======
 	}
 
-
-
->>>>>>> master
-	/*
-	@RequestMapping(value = "/chat")
-	public ModelAndView boardList(@RequestParam(value = "pin", required = true) String pin) throws Exception{
-		ModelAndView modelAndView = new ModelAndView();
-		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-		Map<String, Object> map = new HashMap<String, Object>();
-
-		map.put("model", list);
-
-		return new ModelAndView("list","ex",map);
-
-	}*/
-
+	
 	@RequestMapping(value = "/personal", method = RequestMethod.GET)
 	public void personal() {
 
 	}
 
-//	session.setAttribute("searchid", user.getId());
 	@RequestMapping(value = "/search_member", method = RequestMethod.POST)
 	public String search_member(
 			@RequestParam(value = "id", required = true) String userId,HttpSession session) {
@@ -180,9 +164,6 @@ public class IndexController {
 		System.out.println(user.getName());*/
 		session.setAttribute("searchname",user.getName());
 		session.setAttribute("searchuser",user.getId());
-
-
-
 		return "memberadd";
 	}
 
@@ -193,7 +174,6 @@ public class IndexController {
 		}
 
 	}
-	
 	
 	@RequestMapping(value = "/select_friend", method = RequestMethod.GET)
 	public String select_friend () {
@@ -226,41 +206,7 @@ public class IndexController {
 		session.invalidate();
 		return "index";
 	}
-	@RequestMapping(value = "/makegroup", method = RequestMethod.GET)
-	public void makegroup (){
-	}
-	@RequestMapping(value = "/memberadd", method = RequestMethod.GET)
-	public void memberadd() {		
-	}
-	@RequestMapping(value = "/make_group", method = RequestMethod.GET)
-	public void make_group () {
-	}
 
-<<<<<<< HEAD
-	
-	//	session.setAttribute("searchid", user.getId());
-	@RequestMapping(value = "/search_member", method = RequestMethod.GET)
-	public String search_member(
-			@RequestParam(value = "idadd", required = true) String userId, Model model) {
-		SearchUser search = new SearchUser();
-		Uservo user = new Uservo();
-		user = search.makeGroupUserSearch(userId);
-		if(user.getId() ==null){
-			user = search.makeGroupUserSearch(userId); System.out.println(user.getName());
-		}else{System.out.println("없다.null~");
-		}
-		System.out.println("searchtest: "+user.getId());
-		
-		//그룹
-		Grouplist gg = new Grouplist();
-		List<Groupvo> vo = new ArrayList<Groupvo>();
-		vo = gg.grouplist(user.getId());
-		model.addAttribute("GG", vo); //idadd
-		
-		
-		return "memberadd";
-	}
-=======
 	@RequestMapping(value = "/makegroup", method = RequestMethod.GET)
 	public void group(HttpSession session) {
 		if (session.getAttribute("friendlist") == null) {
@@ -270,11 +216,7 @@ public class IndexController {
 		else {
 			session.setAttribute("listcheck","reallylisthave");
 		}
->>>>>>> master
 
-	@RequestMapping(value = "/select_friend", method = RequestMethod.GET)
-	public String select_friend () {
-		return "makegroup";
 	}
 	@RequestMapping(value = "/getfriendlist", method = RequestMethod.GET)
 	public String getlist(HttpSession session) {
@@ -337,15 +279,13 @@ public class IndexController {
 		session.setAttribute("list", list);
 	}
 
-	
-	
-	
 	@RequestMapping(value = "/useradd", method = RequestMethod.GET)
 	public void useradd(HttpSession session) {
 		if (session.getAttribute("searchname") ==null ) {
 			session.setAttribute("searchname", "mmm");
 		}
 	}
+
 	@RequestMapping(value = "/searchuser", method = RequestMethod.POST)
 	public String searchuser(@RequestParam(value = "id", required = true) String userId,HttpSession session) {
 		SearchUser search = new SearchUser();
@@ -429,12 +369,23 @@ public class IndexController {
 		session.setAttribute("grouplist", grouplist);
 
 	}
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String main() {
-		return "success";
-	}
 	
 	
+	/*@RequestMapping(value = "/success")
+	public ModelAndView success1(HttpSession session,ModelAndView mav) {
+		String userid = (String) session.getAttribute("id");
+		Groupvo gvo = new Groupvo();
+		Grouplist model = new Grouplist();
+		List<Groupvo> glist = model.grouplist(userid);
+		for(int i=0;i<glist.size();i++) {
+			System.out.println("/success - controller : "+glist.get(i).getName());
+		}
+		
+		mav.setViewName("/success"); // 뷰의 이름
+		mav.addObject("glist", glist);
+		
+		return mav;
+	}*/
 	@RequestMapping(value = "/centerchk", method = RequestMethod.GET)
 	public String centerchk(HttpSession session,
 			@RequestParam(value = "check", required = true) String groupname) {

@@ -48,14 +48,8 @@ public class SearchUser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return t;
-	}
-<<<<<<< HEAD
-	
-	public Uservo makeGroupUserSearch(String search){ //°Ë»öÇÏ¸é ÀÌ¸§/¾ÆÀÌµð Ãâ·Â 
-=======
+		return t;}
 	public Uservo makeGroupUserSearch(String search){ //ê²€ìƒ‰í•˜ë©´ ì´ë¦„/ì•„ì´ë”” ì¶œë ¥ 
->>>>>>> master
 		Uservo vo = new Uservo();
 		sql="select * from user where id='"+search+"' or name='"+search+"'";
 		JDBCUtil aa= new JDBCUtil();
@@ -85,16 +79,9 @@ public class SearchUser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-<<<<<<< HEAD
 		
 		return vo;
 	}
 
-	
-=======
-
-		return vo;
-	}
->>>>>>> master
 }
 
